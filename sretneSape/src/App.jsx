@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <h1>Dobrodosli u Sretne sape</h1>
-      <p>Zavirite u svijet kucnih ljubimaca</p>
+      <p>Zavirite u svijet kucnih ljubimaca i pronađi svoga</p>
     </>
   );
 }
