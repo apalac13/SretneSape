@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        image: "url(/src/assets/slike/pocetna.jpg)",
+      },
       colors: {
         black: {
           45: "#1E1E1E",
@@ -20,6 +23,10 @@ export default {
         white: {
           70: "#FFFFFF",
         },
+      },
+      fontFamily: {
+        sans: ["PT Sans Narrow", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
     },
   },
