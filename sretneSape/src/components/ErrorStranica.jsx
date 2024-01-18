@@ -6,13 +6,15 @@ function ErrorStranica(props) {
   console.error(error);
 
   return (
-    <div>
-      <img src={error404} alt="Error404" className="w-[1440px] h-[1200px]" />
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+    <div className="flex flex-col items-center bg-[#fff]">
+      <div className="bg-[#fff] text-2xl">
+        <h1>Oops!</h1>
+        <p>Sorry, an unexpected error has occurred.</p>
+        <p>
+          <i>{error.statusText || error.message}</i>
+        </p>
+      </div>
+      <img src={error404} alt="Error404" className="w-[1300px] h-[1000px]" />
     </div>
   );
 }
