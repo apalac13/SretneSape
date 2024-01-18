@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import krug from "../assets/ellipse1.svg";
-function Navigacija({ transparentno }) {
+function Navigacija({ transparentno, item }) {
   return (
     <nav
       className={
@@ -24,7 +24,11 @@ function Navigacija({ transparentno }) {
         <li className={transparentno ? "bg-transparent " : " "}>
           <Link
             to={"/popis"}
-            className={transparentno ? "bg-transparent " : " "}
+            className={`${transparentno ? "bg-transparent " : " "} ${
+              item == "popis"
+                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
+                : "text-black-45 hover:border-b-2 border-black-45"
+            }`}
           >
             POPIS
           </Link>
@@ -32,15 +36,21 @@ function Navigacija({ transparentno }) {
         <li className={transparentno ? "bg-transparent " : " "}>
           <Link
             to={"/donacije"}
-            className={transparentno ? "bg-transparent " : " "}
+            className={`${transparentno ? "bg-transparent " : " "} ${
+              item == "donacije"
+                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
+                : "text-black-45 "
+            }`}
           >
             DONACIJE
           </Link>
         </li>
-        <li className={transparentno ? "bg-transparent " : " "}>
+        <li className={transparentno ? "bg-transparent " : ""}>
           <Link
             to={"/obavijesti"}
-            className={transparentno ? "bg-transparent " : " "}
+            className={`${transparentno ? "bg-transparent " : " "} ${
+              item == "obavijesti" ? "text-black-45/60" : "text-black-45"
+            }`}
           >
             OBAVIJESTI
           </Link>
@@ -48,7 +58,9 @@ function Navigacija({ transparentno }) {
         <li className={transparentno ? "bg-transparent " : " "}>
           <Link
             to={"/unos"}
-            className={transparentno ? "bg-transparent " : " "}
+            className={`${transparentno ? "bg-transparent " : " "} ${
+              item == "unos" ? "text-black-45/60" : "text-black-45"
+            }`}
           >
             UNOS
           </Link>
