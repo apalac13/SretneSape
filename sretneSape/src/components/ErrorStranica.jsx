@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router-dom";
+import error404 from "../assets/slike/Error404.jpg";
 
 function ErrorStranica(props) {
   const error = useRouteError();
@@ -6,11 +7,7 @@ function ErrorStranica(props) {
 
   return (
     <div>
-      <img
-        src="../../slike/Error404.jpg"
-        alt="Error404"
-        className="w-[1440px] h-[1200px]"
-      />
+      <img src={error404} alt="Error404" className="w-[1440px] h-[1200px]" />
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
