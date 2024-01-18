@@ -1,7 +1,9 @@
+import Navigacija from "./Navigacija";
+
 function Popis(props) {
   return (
     <div>
-      <p>Popis</p>
+      <Navigacija />
     </div>
   );
 }
