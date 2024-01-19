@@ -25,12 +25,12 @@ function ONama(props) {
   }
 
   return (
-    <div className=" pt-[70px] pb-56">
-      <h1 className="text-black-46  text-[80px]">O NAMA</h1>
+    <div className=" pt-[70px] pb-56 font-pt-sans-narrow">
+      <h1 className="text-black-46  text-[80px] ">O NAMA</h1>
       {/* sape */}
       <div className="flex items-center gap-14  mt-20 mx-[55px]">
         <img src={paws2} alt="sape" className="w-[400px] h-[400px]" />
-        <p className="  text-2xl leading-[46px] text-center">
+        <p className="  text-2xl  leading-[46px] text-center">
           Dobrodošli u "Sretne Šape" - oaza nade za četveronožne prijatelje u
           potrazi za vječnim domom. Naša strast i svakodnevni napori usmjereni
           su prema stvaranju boljeg sutra za napuštene životinje. Naša
@@ -67,7 +67,7 @@ function ONama(props) {
             src={contactUs}
             alt="contact us icon"
           />
-          <div className="flex flex-col gap-11 text-3xl  leading-normal w-[637px] ">
+          <div className="flex flex-col gap-11 font-pt-sans-narrow text-3xl  leading-normal w-[637px] ">
             <p className=" text-black-46 ">
               tel: +387 39 661 000 <br />
               mob. tel: +387 63 111 111 <br />

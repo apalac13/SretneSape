@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 function Footer(props) {
   return (
-    <div className="w-full flex flex-col h-[385px] bg-red-51 px-60 pt-10">
-      <div className="flex justify-between mb-5">
+    <div className="w-full flex flex-col h-[385px]  bg-red-51 px-60 pt-10">
+      <div className="flex justify-between font-pt-sans-narrow mb-5">
         <div className="flex flex-col gap-11 ">
           <Link to={"/"}>
             <img src={paws_light} alt="paws" className=" w-56 h-56" />

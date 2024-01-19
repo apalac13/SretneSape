@@ -5,8 +5,8 @@ function Navigacija({ transparentno, item }) {
     <nav
       className={
         transparentno
-          ? "bg-transparent w-full flex   justify-between  px-10 py-10   font-sans text-[40px]  text-black-45"
-          : " w-full flex  justify-between  px-10 py-10 border-b-2 border-black-45 font-sans text-[40px] text-black-45"
+          ? "bg-transparent w-full flex   justify-between  px-10 py-10   font-pt-sans-narrow text-[40px]  text-black-45"
+          : " w-full flex  justify-between  px-10 py-10  border-b-2 border-black-45 font-pt-sans-narrow  text-[40px] text-black-45"
       }
     >
       <ul

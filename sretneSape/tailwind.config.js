@@ -25,8 +25,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["PT Sans Narrow", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        "pt-sans-narrow": ["PT Sans Narrow", "sans-serif"],
+        "pt-serif": ["PT Serif", "serif"],
+        "open-sans": ["Open Sans", "sans-serif"],
       },
     },
   },
