@@ -1,3 +1,5 @@
+import ellipse from "../../assets/ellipse_radio.svg";
+
 function Filter(props) {
   return (
     <div className="flex flex-col gap-[60px] mt-16">
@@ -11,6 +13,7 @@ function Filter(props) {
               value="svi"
               checked={props.filterStatus === "svi"}
               onChange={(e) => props.postaviStatus(e.target.value)}
+              className=""
             />
             Svi
           </label>
@@ -55,6 +58,7 @@ function Filter(props) {
               value="macka"
               checked={props.filterVrsta === "macka"}
               onChange={(e) => props.postaviVrstu(e.target.value)}
+              className=""
             />
             Macka
           </label>

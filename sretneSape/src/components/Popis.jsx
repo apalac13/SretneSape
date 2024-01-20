@@ -23,6 +23,7 @@ function Popis(props) {
         />
         <Zivotinja />
       </div>
+      <Footer />
     </div>
   );
 }

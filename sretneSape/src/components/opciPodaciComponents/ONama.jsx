@@ -3,7 +3,8 @@ import paws2 from "../../assets/slike/paws2.png";
 import destination from "../../assets/slike/destination.png";
 import contactUs from "../../assets/slike/contact-us.png";
 import conversation from "../../assets/slike/conversation.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function ONama(props) {
   const location = {
@@ -12,6 +13,7 @@ function ONama(props) {
     lng: 17.4186861,
   };
 
+  const [mail, postaviMail] = useState([]);
   const [formaPodaci, postaviPodatke] = useState({
     ime: "",
     prezime: "",
@@ -19,9 +21,22 @@ function ONama(props) {
     poruka: "",
   });
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/mail")
+      .then((rez) => postaviMail(rez.data))
+      .catch((error) => console.log(error.message));
+  }, []);
+
   function promjenaUlaza(event) {
     const { name, value } = event.target;
     postaviPodatke({ ...formaPodaci, [name]: value });
+  }
+
+  function saljiPodatke() {
+    axios
+      .post("http://localhost:3001/mail", formaPodaci)
+      .then((rez) => postaviMail((stanje) => [...stanje, rez.data]));
   }
 
   return (
@@ -85,7 +100,10 @@ function ONama(props) {
       <div className="flex justify-between items-end gap-[104px] mt-32 mx-[55px]">
         <div className="flex flex-col  gap-[104px]">
           <p className="text-black-46 text-[80px]">imaš pitanje?</p>
-          <form className="flex flex-col items-start gap-7">
+          <form
+            className="flex flex-col items-start gap-7"
+            onSubmit={saljiPodatke}
+          >
             <label
               htmlFor=""
               className="flex items-end justify-between w-[700px]  text-4xl"

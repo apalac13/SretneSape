@@ -17,7 +17,14 @@ function Navigacija({ transparentno, item }) {
         }
       >
         <li className={transparentno ? "bg-transparent " : " "}>
-          <Link to={"/"} className={transparentno ? "bg-transparent " : " "}>
+          <Link
+            to={"/"}
+            className={`${transparentno ? "bg-transparent " : " "} ${
+              item == "/"
+                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
+                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
+            }`}
+          >
             O NAMA
           </Link>
         </li>
@@ -27,7 +34,7 @@ function Navigacija({ transparentno, item }) {
             className={`${transparentno ? "bg-transparent " : " "} ${
               item == "popis"
                 ? "text-black-45/60 hover:border-b-2 border-black-45/60"
-                : "text-black-45 hover:border-b-2 border-black-45"
+                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
             }`}
           >
             POPIS
@@ -39,7 +46,7 @@ function Navigacija({ transparentno, item }) {
             className={`${transparentno ? "bg-transparent " : " "} ${
               item == "donacije"
                 ? "text-black-45/60 hover:border-b-2 border-black-45/60"
-                : "text-black-45 "
+                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
             }`}
           >
             DONACIJE
@@ -49,7 +56,9 @@ function Navigacija({ transparentno, item }) {
           <Link
             to={"/obavijesti"}
             className={`${transparentno ? "bg-transparent " : " "} ${
-              item == "obavijesti" ? "text-black-45/60" : "text-black-45"
+              item == "obavijesti"
+                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
+                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
             }`}
           >
             OBAVIJESTI
@@ -59,7 +68,9 @@ function Navigacija({ transparentno, item }) {
           <Link
             to={"/unos"}
             className={`${transparentno ? "bg-transparent " : " "} ${
-              item == "unos" ? "text-black-45/60" : "text-black-45"
+              item == "unos"
+                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
+                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60 "
             }`}
           >
             UNOS
@@ -69,18 +80,26 @@ function Navigacija({ transparentno, item }) {
       <ul
         className={
           transparentno
-            ? "bg-transparent flex items-center gap-[14px]"
-            : "flex items-center gap-[14px]"
+            ? "bg-transparent flex items-center gap-[14px] hover:text-black-45/60"
+            : "flex items-center gap-[14px] hover:text-black-45/60"
         }
       >
-        <li className={transparentno ? "bg-transparent " : " "}>ADMIN</li>
+        <li
+          className={
+            transparentno
+              ? "bg-transparent cursor-pointer  "
+              : " cursor-pointer  "
+          }
+        >
+          ADMIN
+        </li>
         <img
           src={krug}
           alt="elipsa"
           className={
             transparentno
-              ? "bg-transparent w-[35px] h-[35px] cursor-pointer "
-              : " w-[35px] h-[35px] cursor-pointer"
+              ? "bg-border-black-45 w-[35px] h-[35px] cursor-pointer border border-black-45  rounded-3xl bg-black-45 hover:bg-black-45/60"
+              : " w-[35px] h-[35px] cursor-pointer border border-black-45  rounded-3xl bg-black-45 hover:black-45/60"
           }
         />
       </ul>
