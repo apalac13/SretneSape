@@ -10,8 +10,8 @@ function Filter(props) {
             <input
               type="radio"
               name="status"
-              value="svi"
-              checked={props.filterStatus === "svi"}
+              value=""
+              checked={props.filterStatus === ""}
               onChange={(e) => props.postaviStatus(e.target.value)}
               className=""
             />
@@ -45,8 +45,8 @@ function Filter(props) {
             <input
               type="radio"
               name="vrsta"
-              value="sve"
-              checked={props.filterVrsta === "sve"}
+              value=""
+              checked={props.filterVrsta === ""}
               onChange={(e) => props.postaviVrstu(e.target.value)}
             />
             Sve

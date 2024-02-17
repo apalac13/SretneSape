@@ -5,8 +5,8 @@ import Footer from "./Footer";
 import { useState } from "react";
 
 function Popis(props) {
-  const [filterStatus, postaviFilterStatus] = useState("svi");
-  const [filterVrsta, postaviFilterVrsta] = useState("sve");
+  const [filterStatus, postaviFilterStatus] = useState("");
+  const [filterVrsta, postaviFilterVrsta] = useState("");
 
   return (
     <div>
@@ -21,7 +21,7 @@ function Popis(props) {
           filterVrsta={filterVrsta}
           postaviVrstu={postaviFilterVrsta}
         />
-        <Zivotinja />
+        <Zivotinja filterStatus={filterStatus} filterVrsta={filterVrsta} />
       </div>
       <Footer />
     </div>
