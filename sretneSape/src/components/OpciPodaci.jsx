@@ -17,12 +17,12 @@ function OpciPodaci(props) {
           }}
         />
         <div className="w-[480px] self-end">
-          <p className=" font-serif text-[45px] text-white-70">
+          <p className=" font-pt-serif text-[45px] text-white-70">
             Izaberi svog ljubimca
           </p>
 
           <Link to={"/popis"}>
-            <button className="mt-8 w-[250px] h-[90px] bg-red-51 text-gray-61 text-[40px] border border-red-51 ">
+            <button className="mt-8 w-[250px] h-[90px] font-pt-sans-narrow bg-red-51 text-gray-61 text-[40px] border border-red-51 ">
               UDOMI ME
             </button>
           </Link>
