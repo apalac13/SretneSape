@@ -13,7 +13,7 @@ function Filter(props) {
               value=""
               checked={props.filterStatus === ""}
               onChange={(e) => props.postaviStatus(e.target.value)}
-              className=""
+              className=" w-5 h-5 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer "
             />
             Svi
           </label>
@@ -24,6 +24,7 @@ function Filter(props) {
               value="udomljen"
               checked={props.filterStatus === "udomljen"}
               onChange={(e) => props.postaviStatus(e.target.value)}
+              className=" w-5 h-5 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer"
             />
             Udomljen
           </label>
@@ -33,6 +34,7 @@ function Filter(props) {
               value="nije udomljen"
               checked={props.filterStatus === "nije udomljen"}
               onChange={(e) => props.postaviStatus(e.target.value)}
+              className=" w-5 h-5 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer"
             />
             Nije udomljen
           </label>
@@ -48,6 +50,7 @@ function Filter(props) {
               value=""
               checked={props.filterVrsta === ""}
               onChange={(e) => props.postaviVrstu(e.target.value)}
+              className=" w-5 h-5 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer"
             />
             Sve
           </label>
@@ -58,7 +61,7 @@ function Filter(props) {
               value="macka"
               checked={props.filterVrsta === "macka"}
               onChange={(e) => props.postaviVrstu(e.target.value)}
-              className=""
+              className=" w-5 h-5 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer"
             />
             Macka
           </label>
@@ -69,6 +72,7 @@ function Filter(props) {
               value="pas"
               checked={props.filterVrsta === "pas"}
               onChange={(e) => props.postaviVrstu(e.target.value)}
+              className=" w-5 h-5 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer"
             />
             Pas
           </label>

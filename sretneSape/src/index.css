@@ -16,3 +16,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+}
