@@ -14,6 +14,27 @@ function KarticaZivotinje() {
       .catch((error) => console.log(error.message));
   }, [zivotinjaId]);
 
+  function sinkronizirajPromjene() {
+    pronadjiZivotinju((prevZivotinja) => ({
+      ...prevZivotinja,
+      status: "udomljen",
+    }));
+  }
+
+  const promijeniStatus = async () => {
+    try {
+      await axios.patch(`http://localhost:3001/zivotinje/${zivotinjaId}`, {
+        status: "udomljen",
+      });
+
+      sinkronizirajPromjene();
+    } catch (error) {
+      console.error("Error: ", error);
+    }
+  };
+
+  function urediPodatke() {}
+
   return (
     <div className="flex justify-center gap-20 mx-10 mt-10">
       <img
@@ -41,7 +62,10 @@ function KarticaZivotinje() {
           </div>
         </div>
         <div className="flex justify-between">
-          <button className="w-[150px] h-[50px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl  ">
+          <button
+            onClick={promijeniStatus}
+            className="w-[150px] h-[50px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl "
+          >
             UDOMI
           </button>
           <button className="w-[150px] h-[50px] border border-red-51 bg-gray-61 text-red-61 font-pt-sans-narrow text-xl ">
