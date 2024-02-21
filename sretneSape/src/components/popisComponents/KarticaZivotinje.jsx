@@ -17,20 +17,15 @@ function KarticaZivotinje() {
       .catch((error) => console.log(error.message));
   }, [zivotinjaId]);
 
-  function sinkronizirajPromjene() {
-    postaviZivotinju((prevZivotinja) => ({
-      ...prevZivotinja,
-      status: "udomljen",
-    }));
-  }
-
   const promijeniStatus = async () => {
     try {
       await axios.patch(`http://localhost:3001/zivotinje/${zivotinjaId}`, {
         status: "udomljen",
       });
-
-      sinkronizirajPromjene();
+      postaviZivotinju((prevZivotinja) => ({
+        ...prevZivotinja,
+        status: "udomljen",
+      }));
     } catch (error) {
       console.error("Error: ", error);
     }
