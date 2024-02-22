@@ -1,9 +1,49 @@
 import Navigacija from "./Navigacija";
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
+import kalendar from "../assets/calendar.svg";
 import axios from "axios";
 
-function Unos(props) {
+function Unos() {
+  const [novaZivotinja, postaviNovuZivotinju] = useState({
+    ime: "",
+    vrsta: "",
+    status: "nije udomljen",
+    godina: "",
+    slika: "",
+    opis: "",
+  });
+
+  const vrste = [
+    { label: "Pas", value: "pas" },
+    { label: "Mačka", value: "macka" },
+    { label: "Ostalo", value: "ostalo" },
+  ];
+
+  let [trenutniDatum, postaviTrenutniDatum] = useState("");
+
+  useEffect(() => {
+    const datum = new Date();
+    const dan = datum.getDate();
+    const mjesec = datum.getMonth() + 1;
+    const godina = datum.getFullYear();
+    postaviTrenutniDatum(`${dan}-${mjesec}-${godina}`);
+  }, []);
+
+  function promjenaUlaza(event) {
+    const { name, value } = event.target;
+    postaviNovuZivotinju({ ...novaZivotinja, [name]: value });
+  }
+
+  const saljiPodatke = (event) => {
+    event.preventDefault();
+    console.log(novaZivotinja);
+
+    axios
+      .post("http://localhost:3001/zivotinje", novaZivotinja)
+      .then((rez) => console.log(rez));
+  };
+
   return (
     <div>
       <Navigacija item={"unos"} />
@@ -12,8 +52,8 @@ function Unos(props) {
           Unos nove životinje
         </h1>
         <div className="flex justify-center">
-          <form action="" className=" w-[800px]">
-            <div className="flex  justify-between font-pt-sans-narrow mb-10">
+          <form onSubmit={saljiPodatke} className=" w-[800px]">
+            <div className="flex justify-between font-pt-sans-narrow mb-10">
               <div className="flex flex-col  gap-8">
                 <div htmlFor="" className="flex flex-col gap-1 items-start">
                   <label htmlFor="ime" className=" text-3xl">
@@ -22,36 +62,29 @@ function Unos(props) {
                   <input
                     type="text"
                     id="ime"
-                    className="w-[400px] h-[40px] bg-gray-50 border border-black-45 rounded"
+                    name="ime"
+                    value={novaZivotinja.ime}
+                    onChange={promjenaUlaza}
+                    className="w-[400px] h-[40px] text-xl p-1  bg-gray-50 border border-black-45 rounded"
+                    required
                   />
                 </div>
                 <div className="flex flex-col gap-1 items-start ">
                   <p className="text-3xl">Vrsta:</p>
-                  <div className="flex gap-3 text-2xl ">
-                    <label htmlFor="pas">
-                      <input
-                        type="radio"
-                        id="pas"
-                        className=" w-6 h-6 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer "
-                      />
-                      Pas
-                    </label>
-                    <label htmlFor="macka">
-                      <input
-                        type="radio"
-                        id="macka"
-                        className=" w-6 h-6 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer "
-                      />
-                      Mačka
-                    </label>
-                    <label htmlFor="ostalo">
-                      <input
-                        type="radio"
-                        id="ostalo"
-                        className=" w-6 h-6 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer "
-                      />
-                      Ostalo
-                    </label>
+                  <div className=" flex gap-8 text-2xl ">
+                    {vrste.map((vrsta, index) => (
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          name="vrsta"
+                          value={vrsta.value}
+                          onChange={promjenaUlaza}
+                          checked={novaZivotinja.vrsta === vrsta.value}
+                          className=" w-6 h-6 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer "
+                        />
+                        <label key={index}>{vrsta.label}</label>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 <div className="flex flex-col items-start">
@@ -61,7 +94,11 @@ function Unos(props) {
                   <input
                     type="text"
                     id="godine"
-                    className="w-[400px] h-[40px] bg-gray-50 border border-black-45 rounded"
+                    name="godina"
+                    value={novaZivotinja.godina}
+                    onChange={promjenaUlaza}
+                    className="w-[400px] h-[40px] text-xl p-1 bg-gray-50 border border-black-45 rounded"
+                    required
                   />
                 </div>
                 <div className="flex flex-col items-start ">
@@ -71,22 +108,39 @@ function Unos(props) {
                   <textarea
                     name="opis"
                     id="opis"
-                    cols="40"
+                    value={novaZivotinja.opis}
+                    onChange={promjenaUlaza}
+                    cols="45"
                     rows="9"
-                    className="text-2xl  bg-gray-50 border border-black-45 rounded"
+                    className="text-xl p-1 bg-gray-50 border border-black-45 rounded"
                   ></textarea>
                 </div>
               </div>
-              <div className="flex flex-col justify-center gap-12 text-3xl">
+              <div className="flex flex-col  gap-14 text-3xl">
+                <div className="flex flex-col items-start gap-1">
+                  <label htmlFor="slika">Slika:</label>
+                  <input
+                    type="text"
+                    id="slika"
+                    name="slika"
+                    value={novaZivotinja.slika}
+                    onChange={promjenaUlaza}
+                    className="w-[200px] h-[40px] text-xl p-1 bg-gray-50 border border-black-45 rounded  "
+                  />
+                </div>
                 <div className="flex items-center gap-1">
-                  <input type="checkbox" className="w-6 h-6  " />
+                  <input type="checkbox" className="w-8 h-8" />
                   <label htmlFor="">Čipiran</label>
                 </div>
                 <div className="flex flex-col items-start gap-1">
-                  <p>Pregled:</p>
+                  <div className="flex  gap-2 ">
+                    <img src={kalendar} alt="kalendar" width={30} height={30} />
+                    <p>Pregled:</p>
+                  </div>
                   <input
-                    type="date"
-                    className="text-2xl bg-gray-50 border border-black-45 rounded"
+                    type="text"
+                    value={trenutniDatum}
+                    className="w-[200px] h-[40px] text-base bg-gray-50 border border-black-45 rounded"
                   />
                 </div>
               </div>

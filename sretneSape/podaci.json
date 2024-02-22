@@ -62,6 +62,15 @@
       "godina": "4 godine",
       "slika": "daisy.jpg",
       "opis": "Daisy je vesela i razigrana dama koja se brzo sprijateljuje s drugim životinjama. Obožava sunčane dane i trčanje po travnjaku. Starost: 4 godine."
+    },
+    {
+      "id": "c560",
+      "ime": "Oscar",
+      "vrsta": "pas",
+      "status": "nije udomljen",
+      "godina": "2 godine",
+      "slika": "oscar.jpg",
+      "opis": "Oscar je divan pas od 2 godine. Smedje dlake, veselog pogleda, razigranog duha. Voli trčati,ljude i kosti."
     }
   ],
   "mail": [
