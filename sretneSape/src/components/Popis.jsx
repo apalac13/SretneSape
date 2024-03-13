@@ -10,7 +10,6 @@ function Popis(props) {
 
   return (
     <div>
-      <Navigacija item={"popis"} />
       <div
         className="flex
       justify-between  gap-8 mx-8"
@@ -23,7 +22,6 @@ function Popis(props) {
         />
         <Zivotinja filterStatus={filterStatus} filterVrsta={filterVrsta} />
       </div>
-      <Footer />
     </div>
   );
 }

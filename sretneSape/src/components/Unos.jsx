@@ -46,7 +46,6 @@ function Unos() {
 
   return (
     <div>
-      <Navigacija item={"unos"} />
       <div className="mt-36 mb-56 ">
         <h1 className="text-black-46 text-5xl font-pt-sans-narrow mb-20  ">
           Unos nove životinje
@@ -154,7 +153,6 @@ function Unos() {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

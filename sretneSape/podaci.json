@@ -73,5 +73,20 @@
       "poruka": "imam pitanje, jel se pojavi id u bazi?"
     }
   ],
-  "donacije": []
+  "trazi": [
+    {
+      "id": "1",
+      "tip": "Hrana",
+      "vrijednost": "10€",
+      "opis": "ovo je opis hrane od 10€"
+    },
+    {
+      "id": "2",
+      "tip": "Igračke",
+      "vrijednost": "20€",
+      "opis": "ovo je opis igrački od 20€"
+    }
+  ],
+  "nudi": [],
+  "donirano": []
 }

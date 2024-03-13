@@ -11,11 +11,6 @@ function OpciPodaci(props) {
   return (
     <div>
       <div className="flex flex-col gap-48  bg-image bg-cover bg-no-repeat bg-blend-multiply  w-full h-[700px] ">
-        <Navigacija
-          transparentno={() => {
-            postaviOnama(true);
-          }}
-        />
         <div className="w-[480px] self-end">
           <p className=" font-pt-serif text-[45px] text-white-70">
             Izaberi svog ljubimca
@@ -29,7 +24,6 @@ function OpciPodaci(props) {
         </div>
       </div>
       <ONama />
-      <Footer />
     </div>
   );
 }

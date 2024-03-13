@@ -3,16 +3,16 @@ import instagram from "../assets/instagram.svg";
 import facebook from "../assets/facebook.svg";
 import twitter from "../assets/twitter.svg";
 import youtube from "../assets/youtube.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Footer(props) {
   return (
     <div className="w-full flex flex-col h-[385px]  bg-red-51 px-60 pt-10">
       <div className="flex justify-between font-pt-sans-narrow mb-5">
         <div className="flex flex-col gap-11 ">
-          <Link to={"/"}>
+          <NavLink to={"/"}>
             <img src={paws_light} alt="paws" className=" w-56 h-56" />
-          </Link>
+          </NavLink>
           <div className="flex gap-3 hover:cursor-pointer">
             <img src={instagram} alt="instagram" width={30} height={30} />
             <img src={facebook} alt="facebook" width={30} height={30} />
@@ -23,10 +23,10 @@ function Footer(props) {
         <div className=" text-gray-61">
           <p className=" text-[80px]">Menu</p>
           <div className="flex flex-col text-4xl cursor-pointer">
-            <Link to={"/"}>O NAMA</Link>
-            <Link to={"/popis"}>POPIS</Link>
-            <Link to={"/obavijesti"}>OBAVIJESTI</Link>
-            <Link to={"/unos"}>UNOS</Link>
+            <NavLink to={"/"}>O NAMA</NavLink>
+            <NavLink to={"/popis"}>POPIS</NavLink>
+            <NavLink to={"/obavijesti"}>OBAVIJESTI</NavLink>
+            <NavLink to={"/unos"}>UNOS</NavLink>
           </div>
         </div>
       </div>
