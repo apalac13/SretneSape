@@ -73,5 +73,40 @@
       "poruka": "imam pitanje, jel se pojavi id u bazi?"
     }
   ],
-  "donacije": []
+  "trazi": [
+    {
+      "id": "e1e2",
+      "tip": "Hrana",
+      "vrijednost": "20€",
+      "opis": "Trazimo hranu min 20€"
+    },
+    {
+      "id": "d1e7",
+      "tip": "Lijekovi",
+      "vrijednost": "100€",
+      "opis": "Potreban brufen, normabel, panadol, lekadol, injekcija itd.."
+    }
+  ],
+  "nudi": [
+    {
+      "id": "6b1a",
+      "tip": "Lijekovi",
+      "vrijednost": "30€",
+      "opis": "ovo je ponuda za lijekove od 30 eur"
+    },
+    {
+      "id": "7453",
+      "tip": "Hrana",
+      "vrijednost": "30€",
+      "opis": "fali jos malo za hranu, kuous, rastika, itd.."
+    }
+  ],
+  "donirano": [
+    {
+      "id": "5bc0",
+      "tip": "Igracke",
+      "vrijednost": "20€",
+      "opis": "ovo je donacija koju trazimo za igracke"
+    }
+  ]
 }

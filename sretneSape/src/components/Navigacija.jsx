@@ -1,106 +1,66 @@
-import { Link } from "react-router-dom";
-import krug from "../assets/ellipse1.svg";
-function Navigacija({ transparentno, item }) {
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+
+function Navigacija({ action }) {
+  const user = useContext(useContext);
+
   return (
-    <nav
-      className={
-        transparentno
-          ? "bg-transparent w-full flex   justify-between  px-10 py-10   font-pt-sans-narrow text-[40px]  text-black-45"
-          : " w-full flex  justify-between  px-10 py-10  border-b-2 border-black-45 font-pt-sans-narrow  text-[40px] text-black-45"
-      }
-    >
-      <ul
-        className={
-          transparentno
-            ? "bg-transparent flex gap-[30px] "
-            : "flex gap-[30px]  "
-        }
-      >
-        <li className={transparentno ? "bg-transparent " : " "}>
-          <Link
+    <nav className=" w-full flex  justify-between  px-10 py-10  border-b-2 border-black-45 font-pt-sans-narrow  text-[40px] text-black-45 ">
+      <ul className="flex gap-[30px]  ">
+        <li>
+          <NavLink
             to={"/"}
-            className={`${transparentno ? "bg-transparent " : " "} ${
-              item == "/"
-                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
-                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            }`}
+            className="bg-transparent text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
           >
             O NAMA
-          </Link>
+          </NavLink>
         </li>
-        <li className={transparentno ? "bg-transparent " : " "}>
-          <Link
+        <li>
+          <NavLink
             to={"/popis"}
-            className={`${transparentno ? "bg-transparent " : " "} ${
-              item == "popis"
-                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
-                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            }`}
+            className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
           >
             POPIS
-          </Link>
+          </NavLink>
         </li>
-        <li className={transparentno ? "bg-transparent " : " "}>
-          <Link
+        <li>
+          <NavLink
             to={"/donacije"}
-            className={`${transparentno ? "bg-transparent " : " "} ${
-              item == "donacije"
-                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
-                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            }`}
+            className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
           >
             DONACIJE
-          </Link>
+          </NavLink>
         </li>
-        <li className={transparentno ? "bg-transparent " : ""}>
-          <Link
+        <li>
+          <NavLink
             to={"/obavijesti"}
-            className={`${transparentno ? "bg-transparent " : " "} ${
-              item == "obavijesti"
-                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
-                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            }`}
+            className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
           >
             OBAVIJESTI
-          </Link>
+          </NavLink>
         </li>
-        <li className={transparentno ? "bg-transparent " : " "}>
-          <Link
+        <li>
+          <NavLink
             to={"/unos"}
-            className={`${transparentno ? "bg-transparent " : " "} ${
-              item == "unos"
-                ? "text-black-45/60 hover:border-b-2 border-black-45/60"
-                : "text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60 "
-            }`}
+            className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60 "
           >
             UNOS
-          </Link>
+          </NavLink>
         </li>
       </ul>
-      <ul
-        className={
-          transparentno
-            ? "bg-transparent flex items-center gap-[14px] hover:text-black-45/60"
-            : "flex items-center gap-[14px] hover:text-black-45/60"
-        }
-      >
-        <li
-          className={
-            transparentno
-              ? "bg-transparent cursor-pointer  "
-              : " cursor-pointer  "
-          }
-        >
+      <ul className="flex items-center gap-[14px] hover:text-black-45/60">
+        <label htmlFor="admin" className=" cursor-pointer  ">
           ADMIN
-        </li>
-        <img
-          src={krug}
+        </label>
+
+        <input
+          id="admin"
           alt="elipsa"
-          className={
-            transparentno
-              ? "bg-border-black-45 w-[35px] h-[35px] cursor-pointer border border-black-45  rounded-3xl bg-black-45 hover:bg-black-45/60"
-              : " w-[35px] h-[35px] cursor-pointer border border-black-45  rounded-3xl bg-black-45 hover:black-45/60"
-          }
+          type="checkbox"
+          value={user}
+          checked={user}
+          onChange={action}
+          className="w-8 h-8 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer hover:black-45/60"
         />
       </ul>
     </nav>
