@@ -1,33 +1,34 @@
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-function Trazim({ user, osvjezi, postaviOsvjezi }) {
+function Donirano({ user, osvjezi, postaviOsvjezi }) {
   const items = ["Tip", "Vrijednost", "Opis"];
-  const [trazi, postaviTrazi] = useState([]);
+  const [donirano, postaviDonirano] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/trazi")
-      .then((rez) => postaviTrazi(rez.data))
-      .catch((err) => console.log(err.message));
+    if (osvjezi) {
+      axios
+        .get("http://localhost:3001/donirano")
+        .then((rez) => postaviDonirano(rez.data))
+        .catch((err) => console.log(err.message));
 
-    postaviOsvjezi(false);
+      postaviOsvjezi(false);
+    }
   }, [osvjezi]);
 
   const obrisiPodatak = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/trazi/${id}`);
+      await axios.delete(`http://localhost:3001/donirano/${id}`);
       postaviOsvjezi(true);
     } catch (error) {
       console.log("Error deleting:", error);
     }
   };
 
-  const premjestiUDonirano = async (id) => {
+  const premjestiUTrazi = async (id) => {
     try {
-      const itemToDonate = trazi.find((item) => item.id === id);
-      await axios.post(`http://localhost:3001/donirano`, itemToDonate);
+      const itemToDonate = donirano.find((item) => item.id === id);
+      await axios.post(`http://localhost:3001/trazi`, itemToDonate);
       postaviOsvjezi(true);
       obrisiPodatak(id);
     } catch (error) {
@@ -48,34 +49,27 @@ function Trazim({ user, osvjezi, postaviOsvjezi }) {
       </thead>
 
       <tbody className="flex flex-col gap-1 py-4 text-xl">
-        {trazi.map((t) => (
-          <tr key={t.id} className="flex justify-between">
-            <td>{t.tip}</td>
-            <td>{t.vrijednost}</td>
-            <td className="border border-red-51 p-2 bg-gray-61">{t.opis}</td>
+        {donirano.map((d) => (
+          <tr key={d.id} className="flex justify-between">
+            <td>{d.tip}</td>
+            <td>{d.vrijednost}</td>
+            <td className="border border-red-51 p-2 bg-gray-61">{d.opis}</td>
             <td>
-              {user === true ? (
+              {user === true && (
                 <div className="flex gap-2">
                   <button
-                    onClick={() => premjestiUDonirano(t.id)}
+                    onClick={() => premjestiUTrazi(d.id)}
                     className="w-[130px] h-[50px] border border-red-51 bg-gray-61 text-red-61 font-pt-sans-narrow text-lg "
                   >
-                    DONIRANO
+                    PONOVI
                   </button>
                   <button
-                    onClick={() => obrisiPodatak(t.id)}
+                    onClick={() => obrisiPodatak(d.id)}
                     className="w-[130px] h-[50px] border border-red-51 bg-gray-61 text-red-61 font-pt-sans-narrow text-lg "
                   >
                     IZBRIŠI
                   </button>
                 </div>
-              ) : (
-                <button
-                  onClick={() => premjestiUDonirano(t.id)}
-                  className="w-[130px] h-[50px] border border-red-51 bg-gray-61 text-red-61 font-pt-sans-narrow text-lg "
-                >
-                  DONIRAJ
-                </button>
               )}
             </td>
           </tr>
@@ -85,4 +79,4 @@ function Trazim({ user, osvjezi, postaviOsvjezi }) {
   );
 }
 
-export default Trazim;
+export default Donirano;
