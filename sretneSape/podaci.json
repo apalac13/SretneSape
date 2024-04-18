@@ -108,5 +108,21 @@
       "vrijednost": "20€",
       "opis": "ovo je donacija koju trazimo za igracke"
     }
+  ],
+  "obavijesti": [
+    {
+      "id": "2d00",
+      "naslov": "Ljubimci",
+      "text": "Ljubimac je naziv za kućnu životinju koju rado imaju njeni vlasnici. Oni se brinu o njima, maze ih, paze, hrane, igraju se s njima. Vazni su im, povezuju se s njima. ",
+      "vazno": true,
+      "datum": "2024-4-18"
+    },
+    {
+      "id": "3464",
+      "naslov": "Moj pas",
+      "text": "Imam psa, zpve se max, ima 3 godine. Obozavam ga kao i moja djeca. On nas voli, stiti cuva kao i mi njega. On je nas najbolji prijatelj.",
+      "vazno": false,
+      "datum": "2024-4-18"
+    }
   ]
 }
