@@ -65,7 +65,7 @@ function ONama(props) {
       </div>
       {/* lokacija */}
       <div className="flex  lg:flex-row max-[768px]:flex-col max-[1022px]:items-center gap-14 items-end justify-between  mt-32 ">
-        <div className="flex grow flex-col gap-20">
+        <div className="flex grow flex-col gap-20 w-full">
           <p className=" text-black-46 text-6xl max-[1022px]:text-4xl ">
             lokacija
           </p>
