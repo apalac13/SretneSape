@@ -2,7 +2,7 @@ import ellipse from "../../assets/ellipse_radio.svg";
 
 function Filter(props) {
   return (
-    <div className="flex flex-col gap-[60px] mt-16">
+    <div className="flex flex-col  gap-[60px] mt-16">
       <div className="flex flex-col gap-10">
         <p className="text-black-46  text-3xl font-pt-serif ">Filter:</p>
         <div className="flex flex-col items-start gap-4 font-pt-sans-narrow text-2xl">

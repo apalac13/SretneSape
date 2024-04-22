@@ -11,12 +11,12 @@ function PrikazPodataka({ zivotinja }) {
       {dataItems.map((item, index) =>
         item.label !== "Opis" ? (
           <div key={index} className="flex gap-2 items-end">
-            <p className="font-pt-serif text-4xl">{item.label}: </p>
-            <p className="font-pt-sans-narrow text-3xl">{item.value}</p>
+            <p className="font-pt-serif text-3xl">{item.label}: </p>
+            <p className="font-pt-sans-narrow text-2xl">{item.value}</p>
           </div>
         ) : (
           <div className="flex flex-col gap-3 ">
-            <p className="self-start font-pt-serif text-4xl">{item.label}: </p>
+            <p className="self-start font-pt-serif text-3xl">{item.label}: </p>
             <p className=" text-start font-pt-sans-narrow ">{item.value} </p>
           </div>
         )
