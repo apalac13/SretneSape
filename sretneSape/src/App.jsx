@@ -31,8 +31,8 @@ function App() {
           <Route path="/unos" element={<Unos />} />
           <Route path="*" element={<ErrorStranica />} />
         </Routes>
+        <Footer />
       </userContext.Provider>
-      <Footer />
     </div>
   );
 }
