@@ -43,7 +43,7 @@ function ONama(props) {
     <div className=" pt-[70px] pb-56 px-24 font-pt-sans-narrow">
       <h1 className="text-black-46  text-6xl max-[1022px]:text-4xl ">O NAMA</h1>
       {/* sape */}
-      <div className="flex lg:flex-row  max-[1022px]:flex-col  items-center gap-14  mt-20  ">
+      <div className="flex lg:flex-row  max-[768px]:flex-col  items-center gap-14  mt-20  ">
         <img
           src={paws2}
           alt="sape"
@@ -64,7 +64,7 @@ function ONama(props) {
         </p>
       </div>
       {/* lokacija */}
-      <div className="flex  lg:flex-row max-[1022px]:flex-col max-[1022px]:items-center gap-14 items-end justify-between  mt-32 ">
+      <div className="flex  lg:flex-row max-[768px]:flex-col max-[1022px]:items-center gap-14 items-end justify-between  mt-32 ">
         <div className="flex grow flex-col gap-20">
           <p className=" text-black-46 text-6xl max-[1022px]:text-4xl ">
             lokacija
@@ -78,7 +78,7 @@ function ONama(props) {
         />
       </div>
       {/* kontakt */}
-      <div className="flex lg:flex-row max-[1022px]:flex-col items-center gap-14  justify-between  mt-32">
+      <div className="flex lg:flex-row max-[768px]:flex-col items-center gap-14  justify-between  mt-32">
         <img
           className="w-80 h-80 max-[1022px]:w-40 max-[1022px]:h-40 "
           src={contactUs}
@@ -101,7 +101,7 @@ function ONama(props) {
         </div>
       </div>
       {/* pitanje */}
-      <div className="flex lg:flex-row max-[1022px]:flex-col justify-between items-center max-[1022px]:items-center  gap-[104px] mt-32 ">
+      <div className="flex lg:flex-row max-[768px]:flex-col justify-between items-center max-[1022px]:items-center  gap-[104px] mt-32 ">
         <div className="flex flex-col  gap-[104px]">
           <p className="text-black-46 text-6xl max-[1022px]:text-4xl">
             imaš pitanje?
