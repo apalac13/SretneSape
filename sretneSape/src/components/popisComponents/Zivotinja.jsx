@@ -23,9 +23,9 @@ function Zivotinja({ filterStatus, filterVrsta }) {
   });
 
   return (
-    <div className="grid grid-cols-3 gap-x-6 gap-y-20 mt-36 mb-56">
+    <div className="grid md:grid-cols-3 sm:grid-cols-2  gap-x-6 gap-y-20 mt-36 mb-56">
       {filteredZivotinje.map((zivotinja) => (
-        <div key={zivotinja.id} className="">
+        <div key={zivotinja.id} className=" justify-self-center">
           <Link
             to={{
               pathname: `/popis/${zivotinja.id}`,

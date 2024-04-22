@@ -11,8 +11,8 @@ function Popis(props) {
   return (
     <div>
       <div
-        className="flex
-      justify-between  gap-8 mx-8"
+        className="flex lg:flex-row flex-col
+      justify-between   gap-8 mx-8"
       >
         <Filter
           filterStatus={filterStatus}

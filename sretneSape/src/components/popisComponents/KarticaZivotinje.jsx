@@ -47,13 +47,13 @@ function KarticaZivotinje() {
   }
 
   return (
-    <div className="flex justify-center gap-20 mx-10 mt-10">
+    <div className="w-full flex flex-col md:flex-row items-center justify-center gap-20 px-10 my-10">
       <img
         src={`../../../zivotinje/${zivotinja.slika}`}
         alt=""
-        className="w-[550px] h-[650px]"
+        className="w-[400px] h-[500px]"
       />
-      <div className="flex flex-col justify-between">
+      <div className=" flex flex-col h-[500px] justify-between">
         {uredi === true ? (
           <UrediPodatke
             zivotinja={zivotinja}
