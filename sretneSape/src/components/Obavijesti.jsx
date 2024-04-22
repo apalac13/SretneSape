@@ -92,12 +92,12 @@ function Obavijesti() {
           onSubmit={posaljiObavijest}
           className={` ${
             prikazi ? `visible` : `hidden`
-          }  flex flex-col  gap-2  w-[500px] border border-black-45 p-3`}
+          }  flex flex-col  gap-2  w-[500px] border border-black-45 rounded-md p-3`}
         >
           <div className="flex gap-2">
             <label className="text-xl">Naslov:</label>
             <input
-              className="w-full h-8"
+              className="w-full h-8  bg-white-70 border border-black-45 rounded-sm"
               type="text"
               name="naslov"
               value={novaObavijest.naslov}
@@ -108,6 +108,7 @@ function Obavijesti() {
           <div className="flex gap-2 ">
             <label className="text-xl">Text:</label>
             <textarea
+              className="bg-white-70 border border-black-45 rounded-sm"
               name="text"
               value={novaObavijest.text}
               onChange={promjenaUlaza}
@@ -157,23 +158,51 @@ function Obavijesti() {
               <div
                 className={`flex justify-between  ${
                   o.vazno
-                    ? "  border border-b-gray-61/[0.4] "
+                    ? "  border border-b-gray-61/[0.4] bg-red-51/[0.8] "
                     : " border border-b-black-45 "
                 }   text-2xl p-1`}
               >
-                <p>Naslov: {o.naslov}</p>
-                {o.vazno && <p>Vazno!</p>}
-                <p>{o.datum}</p>
+                <p className={` ${o.vazno ? "   bg-red-51/[0.8] " : " "}   `}>
+                  Naslov: {o.naslov}
+                </p>
+                {o.vazno && (
+                  <p
+                    className={` ${o.vazno ? "   bg-red-51/[0.8] " : "  "}   `}
+                  >
+                    Vazno!
+                  </p>
+                )}
+                <p className={` ${o.vazno ? "   bg-red-51/[0.8] " : " "}   `}>
+                  {o.datum}
+                </p>
               </div>
-              <div className="flex flex-col  p-3 ">
-                <p className="h-[120px] text-left text-lg">{o.text}</p>
+              <div
+                className={`flex flex-col  p-3  ${
+                  o.vazno ? "   bg-red-51/[0.8] " : "  "
+                } `}
+              >
+                <p
+                  className={`h-[120px] text-left text-lg  ${
+                    o.vazno ? "   bg-red-51/[0.8] " : "  "
+                  } `}
+                >
+                  {o.text}
+                </p>
                 {user && (
-                  <div className="flex flex-col justify-center items-end ">
-                    <p>IZBRISI</p>
+                  <div
+                    className={`flex flex-col justify-center items-end ${
+                      o.vazno ? "   bg-red-51/[0.8] " : "  "
+                    } `}
+                  >
+                    <p className={`${o.vazno ? "   bg-red-51/[0.8] " : "  "} `}>
+                      IZBRISI
+                    </p>
                     <img
                       src={bin}
                       alt="ikona smeca"
-                      className="w-8 h-8 cursor-pointer"
+                      className={`w-8 h-8 cursor-pointer ${
+                        o.vazno ? "   bg-red-51/[0.8] " : "  "
+                      } `}
                       onClick={() => izbrisiObavijest(o.id)}
                     />
                   </div>

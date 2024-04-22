@@ -10,18 +10,16 @@ function OpciPodaci(props) {
 
   return (
     <div>
-      <div className="flex flex-col gap-48  bg-image bg-cover bg-no-repeat bg-blend-multiply  w-full h-[700px] ">
-        <div className="w-[480px] self-end">
-          <p className=" font-pt-serif text-[45px] text-white-70">
-            Izaberi svog ljubimca
-          </p>
-
-          <Link to={"/popis"}>
-            <button className="mt-8 w-[250px] h-[90px] font-pt-sans-narrow bg-red-51 text-gray-61 text-[40px] border border-red-51 ">
-              UDOMI ME
-            </button>
-          </Link>
-        </div>
+      <div className="relative bg-image bg-cover bg-no-repeat bg-center bg-blend-darken brightness-50 w-lvh h-lvh  "></div>
+      <div className="absolute  top-2/4 left-2/4  lg:translate-x-1/4 max-[1022px]:-translate-x-1/2 translate-y-2/4  bg-transparent max-w-[400px] ">
+        <p className=" bg-transparent font-pt-serif max-[1022px]:text-2xl  text-4xl text-gray-61  ">
+          Izaberi svog ljubimca i kreni u igru
+        </p>
+        <Link to={"/popis"} className=" bg-red-51 hover:bg-black-45">
+          <button className=" mt-8 w-[200px] h-[80px] max-[1022px]:w-40 max-[1022px]:h-16   font-pt-sans-narrow bg-red-51 text-gray-61 max-[1022px]:text-xl  text-2xl border border-red-51 hover:bg-black-45 ">
+            UDOMI ME
+          </button>
+        </Link>
       </div>
       <ONama />
     </div>

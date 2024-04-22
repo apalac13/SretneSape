@@ -40,12 +40,16 @@ function ONama(props) {
   }
 
   return (
-    <div className=" pt-[70px] pb-56 font-pt-sans-narrow">
-      <h1 className="text-black-46  text-[80px] ">O NAMA</h1>
+    <div className=" pt-[70px] pb-56 px-24 font-pt-sans-narrow">
+      <h1 className="text-black-46  text-6xl max-[1022px]:text-4xl ">O NAMA</h1>
       {/* sape */}
-      <div className="flex items-center gap-14  mt-20 mx-[55px]">
-        <img src={paws2} alt="sape" className="w-[400px] h-[400px]" />
-        <p className="  text-2xl  leading-[46px] text-center">
+      <div className="flex lg:flex-row  max-[1022px]:flex-col  items-center gap-14  mt-20  ">
+        <img
+          src={paws2}
+          alt="sape"
+          className="w-80 h-80 max-[1022px]:w-40  max-[1022px]:h-40  "
+        />
+        <p className="  text-xl max-[1022px]:text-base  leading-[46px]  max-[1022px]:leading-8 text-center">
           Dobrodošli u "Sretne Šape" - oaza nade za četveronožne prijatelje u
           potrazi za vječnim domom. Naša strast i svakodnevni napori usmjereni
           su prema stvaranju boljeg sutra za napuštene životinje. Naša
@@ -60,110 +64,111 @@ function ONama(props) {
         </p>
       </div>
       {/* lokacija */}
-      <div className="flex items-end justify-between  mt-32 mx-[55px]  ">
-        <div className="flex flex-col gap-[104px]">
-          <p className=" text-black-46 text-[80px] ">lokacija</p>
+      <div className="flex  lg:flex-row max-[1022px]:flex-col max-[1022px]:items-center gap-14 items-end justify-between  mt-32 ">
+        <div className="flex grow flex-col gap-20">
+          <p className=" text-black-46 text-6xl max-[1022px]:text-4xl ">
+            lokacija
+          </p>
           <Map location={location} zoomLevel={17} />
         </div>
         <img
-          className="w-[400px] h-[400px]"
+          className="w-80 h-80 max-[1022px]:w-40 max-[1022px]:h-40  "
           src={destination}
           alt="contact us icon"
         />
       </div>
       {/* kontakt */}
-      <div className="flex flex-col  gap-[104px] mt-32 mx-[55px]">
-        <p className="self-end text-black-46 text-[80px] mr-[215px] ">
-          kontakt
-        </p>
-        <div className="flex justify-between">
-          <img
-            className="w-[400px] h-[400px]"
-            src={contactUs}
-            alt="contact us icon"
-          />
-          <div className="flex flex-col gap-11 font-pt-sans-narrow text-3xl  leading-normal w-[637px] ">
-            <p className=" text-black-46 ">
-              tel: +387 39 661 000 <br />
-              mob. tel: +387 63 111 111 <br />
-              email: sretne.sape@gmail.com
-            </p>
-            <p>
-              Radno vrijeme <br />
-              pon-pet: 08:00h - 16:00h <br />
-              sub: 09:00h - 14:00h
-            </p>
-          </div>
+      <div className="flex lg:flex-row max-[1022px]:flex-col items-center gap-14  justify-between  mt-32">
+        <img
+          className="w-80 h-80 max-[1022px]:w-40 max-[1022px]:h-40 "
+          src={contactUs}
+          alt="contact us icon"
+        />
+        <div className="flex grow flex-col gap-11 font-pt-sans-narrow text-2xl max-[1022px]:text-xl  leading-normal ">
+          <p className="max-[1022px]:self-center text-black-46 text-6xl max-[1022px]:text-4xl   ">
+            kontakt
+          </p>
+          <p className=" text-black-46 ">
+            tel: +387 39 661 000 <br />
+            mob. tel: +387 63 111 111 <br />
+            email: sretne.sape@gmail.com
+          </p>
+          <p className=" text-black-46">
+            Radno vrijeme <br />
+            pon-pet: 08:00h - 16:00h <br />
+            sub: 09:00h - 14:00h
+          </p>
         </div>
       </div>
       {/* pitanje */}
-      <div className="flex justify-between items-end gap-[104px] mt-32 mx-[55px]">
+      <div className="flex lg:flex-row max-[1022px]:flex-col justify-between items-center max-[1022px]:items-center  gap-[104px] mt-32 ">
         <div className="flex flex-col  gap-[104px]">
-          <p className="text-black-46 text-[80px]">imaš pitanje?</p>
+          <p className="text-black-46 text-6xl max-[1022px]:text-4xl">
+            imaš pitanje?
+          </p>
           <form
-            className="flex flex-col items-start gap-7"
+            className="flex flex-col items-start justify-center max-w-[600px]  gap-7"
             onSubmit={saljiPodatke}
           >
             <label
               htmlFor=""
-              className="flex items-end justify-between w-[700px]  text-4xl"
+              className="flex max-[1022px]:flex-col max-[1022px]:items-start  items-end justify-between w-full   text-4xl "
             >
-              <p>Ime:</p>
+              <p className=" max-[1022px]:text-3xl ">Ime:</p>
               <input
                 type="text"
                 name="ime"
                 value={formaPodaci.ime}
                 onChange={promjenaUlaza}
-                className="  w-[550px] h-12  bg-gray-50 border border-black-45"
+                className=" max-w-[500px] h-12  bg-gray-50 border border-black-45"
                 required
               />
             </label>
             <label
               htmlFor=""
-              className="flex items-end justify-between w-[700px] text-4xl"
+              className="flex max-[1022px]:flex-col max-[1022px]:items-start items-end justify-between w-full   text-4xl"
             >
-              <p>Prezime:</p>
+              <p className=" max-[1022px]:text-3xl ">Prezime:</p>
               <input
                 type="text"
                 name="prezime"
                 value={formaPodaci.prezime}
                 onChange={promjenaUlaza}
-                className="w-[550px] h-12  bg-gray-50 border border-black-45"
+                className="max-w-[500px] h-12  bg-gray-50 border border-black-45"
                 required
               />
             </label>
             <label
               htmlFor=""
-              className="flex items-end justify-between w-[700px] text-4xl"
+              className="flex max-[1022px]:flex-col max-[1022px]:items-start items-end justify-between w-full  text-4xl"
             >
-              <p>Email:</p>
+              <p className=" max-[1022px]:text-3xl ">Email:</p>
               <input
                 type="email"
                 name="email"
                 value={formaPodaci.email}
                 onChange={promjenaUlaza}
-                className="w-[550px] h-12  bg-gray-50 border border-black-45"
+                className="max-w-[500px] h-12  bg-gray-50 border border-black-45"
                 required
               />
             </label>
             <label
               htmlFor=""
-              className="flex items-start justify-between w-[700px] text-4xl"
+              className="flex max-[1022px]:flex-col max-[1022px]:items-start items-start justify-between w-full  text-4xl"
             >
-              <p>Poruka:</p>
+              <p className=" max-[1022px]:text-3xl ">Poruka:</p>
               <textarea
                 name="poruka"
                 value={formaPodaci.poruka}
                 onChange={promjenaUlaza}
                 rows={4}
-                cols={35}
-                className=" bg-gray-50 border border-black-45"
+                className="w-full bg-gray-50 border border-black-45"
                 required
               />
             </label>
             <button
               type="submit"
-              className="w-[550px] h-[70px] text-3xl text-gray-61 bg-red-51 border border-black-45 self-end"
+              className="w-full h-[60px] text-2xl text-gray-61 bg-red-51 border border-red-51 self-end hover:bg-black-45"
             >
               POŠALJI
             </button>
@@ -172,7 +177,7 @@ function ONama(props) {
         <img
           src={conversation}
           alt="conversation-icon"
-          className="w-[400px] h-[400px]"
+          className="w-80 h-80 max-[1022px]:w-40 max-[1022px]:h-40"
         />
       </div>
     </div>

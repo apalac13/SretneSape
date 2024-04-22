@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        image: "url(/src/assets/slike/pocetna.jpg)",
+        image: "url(/src/assets/slike/hug_dog.jpg)",
       },
       colors: {
         black: {
