@@ -81,7 +81,7 @@ function Obavijesti() {
 
   return (
     <div className="flex flex-col mt-36 mb-56 mx-16 font-pt-sans-narrow ">
-      <div className="flex justify-between mb-16">
+      <div className="flex flex-col lg:flex-row justify-between mb-16">
         <button
           onClick={() => poszaviPrikazi(!prikazi)}
           className="flex items-center justify-center  w-[200px] h-[55px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl "
@@ -92,7 +92,7 @@ function Obavijesti() {
           onSubmit={posaljiObavijest}
           className={` ${
             prikazi ? `visible` : `hidden`
-          }  flex flex-col  gap-2  w-[500px] border border-black-45 rounded-md p-3`}
+          }  flex flex-col  gap-2  max-w-[500px] border border-black-45 rounded-md p-3`}
         >
           <div className="flex gap-2">
             <label className="text-xl">Naslov:</label>
@@ -145,11 +145,11 @@ function Obavijesti() {
       </div>
       <div className="flex  flex-col gap-6 ">
         <p className="self-start text-3xl text-red-51">OBAVIJESTI:</p>
-        <div className="flex flex-col gap-3 items-center justify-center">
+        <div className=" flex flex-col gap-3 items-center justify-center">
           {obavijest.map((o, index) => (
             <div
               key={index}
-              className={`w-[800px] h-[250px]   ${
+              className={`max-w-[800px] h-[250px]   ${
                 o.vazno
                   ? "bg-red-52/[0.8] text-gray-61/[0.92] border border-red-52/[0.8] "
                   : "bg-gray-61 text-black-46 border border-black-45 "

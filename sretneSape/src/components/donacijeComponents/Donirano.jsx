@@ -39,7 +39,7 @@ function Donirano({ user, osvjezi, postaviOsvjezi }) {
   return (
     <table className="flex flex-col ">
       <thead className=" font-normal p-1 border-b border-black-45 ">
-        <tr className="w-[800px] flex justify-between text-2xl ">
+        <tr className="max-w-[800px] flex justify-between text-2xl ">
           {items.map((item, index) => (
             <th key={index} className=" font-normal">
               {item}
@@ -50,7 +50,10 @@ function Donirano({ user, osvjezi, postaviOsvjezi }) {
 
       <tbody className="flex flex-col gap-1 py-4 text-xl">
         {donirano.map((d) => (
-          <tr key={d.id} className="flex justify-between">
+          <tr
+            key={d.id}
+            className="flex flex-col sm:flex-row items-start justify-between"
+          >
             <td>{d.tip}</td>
             <td>{d.vrijednost}</td>
             <td className="border border-red-51 p-2 bg-gray-61">{d.opis}</td>

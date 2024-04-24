@@ -50,10 +50,13 @@ function Unos() {
         <h1 className="text-black-46 text-5xl font-pt-sans-narrow mb-20  ">
           Unos nove životinje
         </h1>
-        <div className="flex justify-center">
-          <form onSubmit={saljiPodatke} className=" w-[800px]">
-            <div className="flex justify-between font-pt-sans-narrow mb-10">
-              <div className="flex flex-col  gap-8">
+        <div className="flex  justify-center items-center">
+          <form
+            onSubmit={saljiPodatke}
+            className="flex flex-col  items-center "
+          >
+            <div className="flex flex-col  lg:w-[800px] w-full lg:flex-row lg:items-start  items-center justify-between font-pt-sans-narrow mb-10">
+              <div className="flex flex-col   gap-8">
                 <div htmlFor="" className="flex flex-col gap-1 items-start">
                   <label htmlFor="ime" className=" text-3xl">
                     Ime:
@@ -64,7 +67,7 @@ function Unos() {
                     name="ime"
                     value={novaZivotinja.ime}
                     onChange={promjenaUlaza}
-                    className="w-[400px] h-[40px] text-xl p-1  bg-gray-50 border border-black-45 rounded"
+                    className="lg:w-[400px] w-full  h-[40px] text-xl p-1  bg-gray-50 border border-black-45 rounded"
                     required
                   />
                 </div>
@@ -96,7 +99,7 @@ function Unos() {
                     name="godina"
                     value={novaZivotinja.godina}
                     onChange={promjenaUlaza}
-                    className="w-[400px] h-[40px] text-xl p-1 bg-gray-50 border border-black-45 rounded"
+                    className="lg:w-[400px] w-full h-[40px] text-xl p-1 bg-gray-50 border border-black-45 rounded"
                     required
                   />
                 </div>
@@ -115,7 +118,7 @@ function Unos() {
                   ></textarea>
                 </div>
               </div>
-              <div className="flex flex-col  gap-14 text-3xl">
+              <div className="self-start flex flex-col  gap-14 text-3xl">
                 <div className="flex flex-col items-start gap-1">
                   <label htmlFor="slika">Slika:</label>
                   <input
@@ -128,7 +131,10 @@ function Unos() {
                   />
                 </div>
                 <div className="flex items-center gap-1">
-                  <input type="checkbox" className="w-8 h-8" />
+                  <input
+                    type="checkbox"
+                    className="w-8 h-8 border border-solid border-black-45  checked:bg-black-45 mr-2 cursor-pointer hover:black-45/60"
+                  />
                   <label htmlFor="">Čipiran</label>
                 </div>
                 <div className="flex flex-col items-start gap-1">

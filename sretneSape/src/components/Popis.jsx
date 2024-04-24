@@ -1,7 +1,7 @@
 import Navigacija from "./Navigacija";
 import Filter from "./popisComponents/Filter";
 import Zivotinja from "./popisComponents/Zivotinja";
-import Footer from "./Footer";
+
 import { useState } from "react";
 
 function Popis(props) {
