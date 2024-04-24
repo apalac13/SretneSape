@@ -21,7 +21,7 @@ function Donacije() {
   return (
     <div>
       <div className=" flex flex-col mt-36 mb-56 mx-16 font-pt-sans-narrow ">
-        <div className="flex gap-20">
+        <div className="flex flex-col lg:flex-row gap-20">
           <button
             onClick={() => postaviDonaciju(!donacija)}
             className="flex items-center justify-center  w-[200px] h-[55px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl mb-16"

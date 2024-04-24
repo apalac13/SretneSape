@@ -46,7 +46,7 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
   return (
     <table className="flex flex-col ">
       <thead className=" font-normal p-1 border-b border-black-45 ">
-        <tr className="w-[800px] flex justify-between text-2xl ">
+        <tr className="max-w-[800px] flex justify-between text-2xl ">
           {items.map((item, index) => (
             <th key={index} className=" font-normal">
               {item}
@@ -56,7 +56,10 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
       </thead>
       <tbody className="flex flex-col gap-1 py-4 text-xl">
         {nudi.map((n) => (
-          <tr key={n.id} className="flex justify-between">
+          <tr
+            key={n.id}
+            className="flex flex-col sm:flex-row items-start justify-between"
+          >
             <td>{n.tip}</td>
             <td>{n.vrijednost}</td>
             <td className="border border-red-51 p-2 bg-gray-61">{n.opis}</td>
