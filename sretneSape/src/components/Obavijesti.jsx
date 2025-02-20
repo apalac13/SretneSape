@@ -84,7 +84,7 @@ function Obavijesti() {
       <div className="flex flex-col lg:flex-row justify-between mb-16">
         <button
           onClick={() => poszaviPrikazi(!prikazi)}
-          className="flex items-center justify-center  w-[200px] h-[55px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl "
+          className="flex items-center justify-center  w-[200px] h-[55px] border border-red-52 bg-red-52 text-gray-61 font-pt-sans-narrow text-xl "
         >
           NOVA OBAVIJEST
         </button>
@@ -138,7 +138,7 @@ function Obavijesti() {
             <input
               type="submit"
               value="SPREMI"
-              className="flex items-center justify-center w-[100px] h-[50px] cursor-pointer  border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl "
+              className="flex items-center justify-center w-[100px] h-[50px] cursor-pointer  border border-red-52 bg-red-52 text-gray-61 font-pt-sans-narrow text-xl "
             />
           </div>
         </form>
@@ -151,39 +151,37 @@ function Obavijesti() {
               key={index}
               className={`max-w-[800px] h-[250px]   ${
                 o.vazno
-                  ? "bg-red-52/[0.8] text-gray-61/[0.92] border border-red-52/[0.8] "
+                  ? "bg-red-52 text-gray-61/[0.92] border border-red-52"
                   : "bg-gray-61 text-black-46 border border-black-45 "
               }  `}
             >
               <div
                 className={`flex justify-between  ${
                   o.vazno
-                    ? "  border border-b-gray-61/[0.4] bg-red-51/[0.8] "
-                    : " border border-b-black-45 "
+                    ? " border-b border-gray-61/[0.4] bg-red-52 "
+                    : " border-b border-black-45 "
                 }   text-2xl p-1`}
               >
-                <p className={` ${o.vazno ? "   bg-red-51/[0.8] " : " "}   `}>
+                <p className={` ${o.vazno ? "   bg-red-52 " : " "}   `}>
                   Naslov: {o.naslov}
                 </p>
                 {o.vazno && (
-                  <p
-                    className={` ${o.vazno ? "   bg-red-51/[0.8] " : "  "}   `}
-                  >
+                  <p className={` ${o.vazno ? "   bg-red-52 " : "  "}   `}>
                     Vazno!
                   </p>
                 )}
-                <p className={` ${o.vazno ? "   bg-red-51/[0.8] " : " "}   `}>
+                <p className={` ${o.vazno ? "   bg-red-52 " : " "}   `}>
                   {o.datum}
                 </p>
               </div>
               <div
                 className={`flex flex-col  p-3  ${
-                  o.vazno ? "   bg-red-51/[0.8] " : "  "
+                  o.vazno ? "   bg-red-52 " : "  "
                 } `}
               >
                 <p
                   className={`h-[120px] text-left text-lg  ${
-                    o.vazno ? "   bg-red-51/[0.8] " : "  "
+                    o.vazno ? "   bg-red-52 " : "  "
                   } `}
                 >
                   {o.text}
@@ -191,17 +189,17 @@ function Obavijesti() {
                 {user && (
                   <div
                     className={`flex flex-col justify-center items-end ${
-                      o.vazno ? "   bg-red-51/[0.8] " : "  "
+                      o.vazno ? "   bg-red-52 " : "  "
                     } `}
                   >
-                    <p className={`${o.vazno ? "   bg-red-51/[0.8] " : "  "} `}>
+                    <p className={`${o.vazno ? "   bg-red-52/[0.8] " : "  "} `}>
                       IZBRISI
                     </p>
                     <img
                       src={bin}
                       alt="ikona smeca"
                       className={`w-8 h-8 cursor-pointer ${
-                        o.vazno ? "   bg-red-51/[0.8] " : "  "
+                        o.vazno ? "   bg-red-52/[0.8] " : "  "
                       } `}
                       onClick={() => izbrisiObavijest(o.id)}
                     />
