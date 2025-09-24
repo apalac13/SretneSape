@@ -38,7 +38,7 @@ function Unos() {
     console.log(novaZivotinja);
 
     axios
-      .post("http://localhost:3001/zivotinje", novaZivotinja)
+      .post("https://sretnesape.onrender.com/zivotinje", novaZivotinja)
       .then((rez) => console.log(rez));
   };
 

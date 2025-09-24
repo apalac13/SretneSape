@@ -16,7 +16,7 @@ function Obavijesti() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/obavijesti")
+      .get("https://sretnesape.onrender.com/obavijesti")
       .then((rez) => postaviObavijest(rez.data))
       .catch((error) => console.log("Error:", error.message));
   }, []);
@@ -60,7 +60,7 @@ function Obavijesti() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/obavijesti",
+        "https://sretnesape.onrender.com/obavijesti",
         novaObavijestWithDate // Send novaObavijest with current date
       );
       postaviObavijest(response.data);
@@ -71,8 +71,8 @@ function Obavijesti() {
 
   const izbrisiObavijest = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/obavijesti/${id}`);
-      const rez = await axios.get("http://localhost:3001/obavijesti");
+      await axios.delete(`https://sretnesape.onrender.com/${id}`);
+      const rez = await axios.get("https://sretnesape.onrender.com/obavijesti");
       postaviObavijest(rez.data);
     } catch (error) {
       console.log("Error deleting:", error);

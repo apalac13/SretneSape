@@ -23,7 +23,7 @@ function ONama() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/mail")
+      .get("https://sretnesape.onrender.com/mail")
       .then((rez) => postaviMail(rez.data))
       .catch((error) => console.log(error.message));
   }, []);
@@ -35,7 +35,7 @@ function ONama() {
 
   function saljiPodatke() {
     axios
-      .post("http://localhost:3001/mail", formaPodaci)
+      .post("https://sretnesape.onrender.com/mail", formaPodaci)
       .then((rez) => postaviMail((stanje) => [...stanje, rez.data]));
   }
 

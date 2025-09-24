@@ -7,7 +7,7 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/nudi")
+      .get("https://sretnesape.onrender.com/nudi")
       .then((rez) => postaviPonudu(rez.data))
       .catch((err) => console.log(err.message));
     postaviOsvjezi(false);
@@ -15,7 +15,7 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
 
   const obrisiPodatak = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/nudi/${id}`);
+      await axios.delete(`https://sretnesape.onrender.com/nudi/${id}`);
       postaviOsvjezi(true);
     } catch (error) {
       console.log("Error deleting:", error);
@@ -25,7 +25,10 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
   const premjestiUDonirano = async (id) => {
     try {
       const itemToDonate = nudi.find((item) => item.id === id);
-      await axios.post(`http://localhost:3001/donirano`, itemToDonate);
+      await axios.post(
+        `https://sretnesape.onrender.com/donirano`,
+        itemToDonate
+      );
       postaviOsvjezi(true);
       obrisiPodatak(id);
     } catch (error) {

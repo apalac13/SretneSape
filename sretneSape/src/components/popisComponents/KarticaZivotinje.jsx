@@ -11,16 +11,19 @@ function KarticaZivotinje() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/zivotinje/${zivotinjaId}`)
+      .get(`https://sretnesape.onrender.com/zivotinje/${zivotinjaId}`)
       .then((rez) => postaviZivotinju(rez.data))
       .catch((error) => console.log(error.message));
   }, [zivotinjaId]);
 
   const promijeniStatus = async () => {
     try {
-      await axios.patch(`http://localhost:3001/zivotinje/${zivotinjaId}`, {
-        status: "udomljen",
-      });
+      await axios.patch(
+        `https://sretnesape.onrender.com/zivotinje/${zivotinjaId}`,
+        {
+          status: "udomljen",
+        }
+      );
       postaviZivotinju((prevZivotinja) => ({
         ...prevZivotinja,
         status: "udomljen",
@@ -32,7 +35,10 @@ function KarticaZivotinje() {
 
   useEffect(() => {
     if (!uredi) {
-      axios.put(`http://localhost:3001/zivotinje/${zivotinja.id}`, zivotinja);
+      axios.put(
+        `https://sretnesape.onrender.com/zivotinje/${zivotinja.id}`,
+        zivotinja
+      );
     }
   }, [uredi, zivotinja]);
 

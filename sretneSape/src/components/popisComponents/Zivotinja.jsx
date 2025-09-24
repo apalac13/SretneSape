@@ -7,7 +7,7 @@ function Zivotinja({ filterStatus, filterVrsta }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/zivotinje")
+      .get("https://sretnesape.onrender.com/zivotinje")
       .then((rez) => postaviZivotinje(rez.data))
       .catch((error) => console.log(error.message));
   }, []);

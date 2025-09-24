@@ -8,7 +8,7 @@ function Donirano({ user, osvjezi, postaviOsvjezi }) {
   useEffect(() => {
     if (osvjezi) {
       axios
-        .get("http://localhost:3001/donirano")
+        .get("https://sretnesape.onrender.com/donirano")
         .then((rez) => postaviDonirano(rez.data))
         .catch((err) => console.log(err.message));
 
@@ -18,7 +18,7 @@ function Donirano({ user, osvjezi, postaviOsvjezi }) {
 
   const obrisiPodatak = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/donirano/${id}`);
+      await axios.delete(`https://sretnesape.onrender.com/donirano/${id}`);
       postaviOsvjezi(true);
     } catch (error) {
       console.log("Error deleting:", error);
@@ -28,7 +28,7 @@ function Donirano({ user, osvjezi, postaviOsvjezi }) {
   const premjestiUTrazi = async (id) => {
     try {
       const itemToDonate = donirano.find((item) => item.id === id);
-      await axios.post(`http://localhost:3001/trazi`, itemToDonate);
+      await axios.post(`https://sretnesape.onrender.com/trazi`, itemToDonate);
       postaviOsvjezi(true);
       obrisiPodatak(id);
     } catch (error) {

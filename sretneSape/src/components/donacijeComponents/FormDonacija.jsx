@@ -17,13 +17,13 @@ function FormDonacija({
     try {
       if (user) {
         await axios
-          .post(`http://localhost:3001/trazi`, novaDonacija)
+          .post(`https://sretnesape.onrender.com/trazi`, novaDonacija)
           .then(() => {
             postaviOsvjezi(true);
           });
       } else {
         await axios
-          .post(`http://localhost:3001/nudi`, novaDonacija)
+          .post(`https://sretnesape.onrender.com/nudi`, novaDonacija)
           .then(() => {
             postaviOsvjezi(true);
           });

@@ -8,7 +8,7 @@ function Trazim({ user, osvjezi, postaviOsvjezi }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/trazi")
+      .get("https://sretnesape.onrender.com/trazi")
       .then((rez) => postaviTrazi(rez.data))
       .catch((err) => console.log(err.message));
 
@@ -17,7 +17,7 @@ function Trazim({ user, osvjezi, postaviOsvjezi }) {
 
   const obrisiPodatak = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/trazi/${id}`);
+      await axios.delete(`https://sretnesape.onrender.com/trazi/${id}`);
       postaviOsvjezi(true);
     } catch (error) {
       console.log("Error deleting:", error);
@@ -27,7 +27,10 @@ function Trazim({ user, osvjezi, postaviOsvjezi }) {
   const premjestiUDonirano = async (id) => {
     try {
       const itemToDonate = trazi.find((item) => item.id === id);
-      await axios.post(`http://localhost:3001/donirano`, itemToDonate);
+      await axios.post(
+        `https://sretnesape.onrender.com/donirano`,
+        itemToDonate
+      );
       postaviOsvjezi(true);
       obrisiPodatak(id);
     } catch (error) {
