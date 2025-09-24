@@ -15,91 +15,94 @@ function Navigacija({ action }) {
   ];
 
   return (
-    <nav className="w-full flex justify-between px-6 md:px-10 py-6 border-b-2 border-black-45 font-pt-sans-narrow text-2xl text-black-45 relative">
-      {/* Logo */}
-      <NavLink to="/" className="w-8 h-8 md:hidden">
-        <img src={logo} alt="logo" />
-      </NavLink>
+    <nav className="w-full bg-white border-b border-gray-300 fixed top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:py-5">
+        {/* Logo */}
+        <NavLink to="/">
+          <img src={logo} alt="logo" className="h-10 w-auto" />
+        </NavLink>
 
-      {/* Desktop menu */}
-      <div className="hidden md:flex w-full justify-between items-center">
-        <ul className="flex gap-[30px]">
+        {/* Desktop Links */}
+        <ul className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <li key={link.to}>
               <NavLink
                 to={link.to}
-                className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
+                className={({ isActive }) =>
+                  `text-gray-800 hover:text-gray-600 ${
+                    isActive ? "font-bold border-b-2 border-gray-600" : ""
+                  }`
+                }
               >
                 {link.label}
               </NavLink>
             </li>
           ))}
+          <li className="flex items-center gap-2">
+            <label htmlFor="admin" className="cursor-pointer">
+              ADMIN
+            </label>
+            <input
+              id="admin"
+              type="checkbox"
+              checked={user}
+              onChange={action}
+              className="w-6 h-6 rounded-full border border-gray-500 cursor-pointer checked:bg-gray-800"
+            />
+          </li>
         </ul>
 
-        <div className="flex items-center gap-[14px]">
-          <label htmlFor="admin" className="cursor-pointer">
-            ADMIN
-          </label>
-          <input
-            id="admin"
-            type="checkbox"
-            value={user}
-            checked={user}
-            onChange={action}
-            className="w-8 h-8 border border-solid border-black-45 rounded-full checked:bg-black-45 cursor-pointer"
-          />
-        </div>
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+          aria-label="Menu"
+        >
+          <span
+            className={`block h-0.5 w-6 bg-gray-800 transition-transform duration-300 ${
+              menuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block h-0.5 w-6 bg-gray-800 transition-opacity duration-300 ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block h-0.5 w-6 bg-gray-800 transition-transform duration-300 ${
+              menuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
+        </button>
       </div>
 
-      <button
-        onClick={() => setMenuOpen(!menuOpen)}
-        className="z-20 md:hidden flex flex-col justify-center items-center"
-        aria-label="Menu"
-      >
-        {menuOpen ? (
-          <div className="w-6 h-6 flex flex-col justify-center items-center relative">
-            <span className="absolute w-6 h-1 bg-black-45 rotate-45"></span>
-            <span className="absolute w-6 h-1 bg-black-45 -rotate-45"></span>
-          </div>
-        ) : (
-          <>
-            <div className="w-6 h-1 bg-black-45 mb-1"></div>
-            <div className="w-6 h-1 bg-black-45 mb-1"></div>
-            <div className="w-6 h-1 bg-black-45"></div>
-          </>
-        )}
-      </button>
-
-      <ul
-        className={`z-10 w-screen bg-gray-61 pb-10 absolute top-0 right-0 flex flex-col space-y-3 p-6 transform transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        {navLinks.map((link) => (
-          <li key={link.to}>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-300 w-full px-4 py-6 flex flex-col gap-4 items-center">
+          {navLinks.map((link) => (
             <NavLink
+              key={link.to}
               to={link.to}
               onClick={() => setMenuOpen(false)}
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
+              className="text-gray-800 hover:text-gray-600 text-lg font-medium"
             >
               {link.label}
             </NavLink>
-          </li>
-        ))}
-        <li className="flex gap-2 items-center justify-center mt-4">
-          <label htmlFor="admin" className="cursor-pointer">
-            ADMIN
-          </label>
-          <input
-            id="admin"
-            type="checkbox"
-            value={user}
-            checked={user}
-            onChange={action}
-            className="w-8 h-8 border border-solid border-black-45 rounded-full checked:bg-black-45 cursor-pointer"
-          />
-        </li>
-      </ul>
+          ))}
+          <div className="flex items-center gap-2 mt-4">
+            <label htmlFor="admin" className="cursor-pointer">
+              ADMIN
+            </label>
+            <input
+              id="admin"
+              type="checkbox"
+              checked={user}
+              onChange={action}
+              className="w-6 h-6 rounded-full border border-gray-500 cursor-pointer checked:bg-gray-800"
+            />
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
