@@ -6,7 +6,7 @@ import conversation from "../../assets/slike/conversation.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function ONama(props) {
+function ONama() {
   const location = {
     address: "Hrvatskih branitelja 2, Grude 88340, Bosna i Hercegovina",
     lat: 43.3615127,
@@ -50,17 +50,18 @@ function ONama(props) {
           className="w-80 h-80 max-[1022px]:w-40  max-[1022px]:h-40  "
         />
         <p className="  text-xl max-[1022px]:text-base  leading-[46px]  max-[1022px]:leading-8 text-center">
-          Dobrodošli u "Sretne Šape" - oaza nade za četveronožne prijatelje u
-          potrazi za vječnim domom. Naša strast i svakodnevni napori usmjereni
-          su prema stvaranju boljeg sutra za napuštene životinje. Naša
-          jednostavna, ali duboka misija: pružiti svakoj šapici ne samo krov nad
-          glavom, već i vječnu ljubav. Kroz našu stranicu, želimo vam približiti
-          priče ovih nevjerojatnih bića i pozvati vas da postanete dio njihovih
-          života. "Sretne Šape" nisu samo azil; mi smo zajednica ljubitelja
-          životinja uvjerenih da svaka šapica zaslužuje šansu za sreću. Uz vašu
-          podršku, zajedno možemo stvoriti svijet gdje svaka šapica ima priliku
-          znati što znači biti voljen. Hvala vam što ste s nama na ovom
-          putovanju ispunjenom ljubavlju i nadom!
+          Dobrodošli u &quot;Sretne Šape&quot; - oaza nade za četveronožne
+          prijatelje u potrazi za vječnim domom. Naša strast i svakodnevni
+          napori usmjereni su prema stvaranju boljeg sutra za napuštene
+          životinje. Naša jednostavna, ali duboka misija: pružiti svakoj šapici
+          ne samo krov nad glavom, već i vječnu ljubav. Kroz našu stranicu,
+          želimo vam približiti priče ovih nevjerojatnih bića i pozvati vas da
+          postanete dio njihovih života. &quot;Sretne Šape &quot; nisu samo
+          azil; mi smo zajednica ljubitelja životinja uvjerenih da svaka šapica
+          zaslužuje šansu za sreću. Uz vašu podršku, zajedno možemo stvoriti
+          svijet gdje svaka šapica ima priliku znati što znači biti voljen.
+          Hvala vam što ste s nama na ovom putovanju ispunjenom ljubavlju i
+          nadom!
         </p>
       </div>
       {/* lokacija */}

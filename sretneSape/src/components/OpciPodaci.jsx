@@ -1,12 +1,7 @@
-import { React, useRef } from "react";
-import { useState } from "react";
-import Navigacija from "./Navigacija";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
 import ONama from "./opciPodaciComponents/ONama";
 
-function OpciPodaci(props) {
-  const [oNama, postaviOnama] = useState(false);
+function OpciPodaci() {
 
   return (
     <div>

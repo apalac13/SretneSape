@@ -4,7 +4,7 @@ import Donirano from "./donacijeComponents/Donirano";
 import FormDonacija from "./donacijeComponents/FormDonacija";
 import userContext from "./userContext";
 import { useContext } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Donacije() {
   const user = useContext(userContext);
@@ -15,8 +15,6 @@ function Donacije() {
     vrijednost: "",
     opis: "",
   });
-
-  console.log(donacija);
 
   return (
     <div>
@@ -31,7 +29,6 @@ function Donacije() {
           {donacija && (
             <FormDonacija
               user={user}
-              osvjezi={osvjezi}
               postaviOsvjezi={postaviOsvjezi}
               novaDonacija={novaDonacija}
               postaviNovuDonaciju={postaviNovuDonaciju}

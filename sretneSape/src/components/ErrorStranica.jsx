@@ -1,7 +1,7 @@
 import { useRouteError } from "react-router-dom";
 import error404 from "../assets/slike/Error404.jpg";
 
-function ErrorStranica(props) {
+function ErrorStranica() {
   const error = useRouteError();
   console.error(error);
 

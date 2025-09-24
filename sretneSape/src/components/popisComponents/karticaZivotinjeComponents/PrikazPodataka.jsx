@@ -15,7 +15,7 @@ function PrikazPodataka({ zivotinja }) {
             <p className="font-pt-sans-narrow text-2xl">{item.value}</p>
           </div>
         ) : (
-          <div className="flex flex-col gap-3 ">
+          <div key={index} className="flex flex-col gap-3 ">
             <p className="self-start font-pt-serif text-3xl">{item.label}: </p>
             <p className=" text-start font-pt-sans-narrow ">{item.value} </p>
           </div>

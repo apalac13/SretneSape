@@ -5,7 +5,7 @@ import twitter from "../assets/twitter.svg";
 import youtube from "../assets/youtube.svg";
 import { NavLink } from "react-router-dom";
 
-function Footer(props) {
+function Footer() {
   return (
     <div className="w-full flex flex-col h-[360px]  bg-red-51 px-60 max-[1022px]:px-10 pt-10">
       <div className="flex flex-col  bg-red-51 font-pt-sans-narrow mb-5">

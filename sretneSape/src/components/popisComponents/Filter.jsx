@@ -1,5 +1,3 @@
-import ellipse from "../../assets/ellipse_radio.svg";
-
 function Filter(props) {
   return (
     <div className="flex flex-col  gap-[60px] mt-16">

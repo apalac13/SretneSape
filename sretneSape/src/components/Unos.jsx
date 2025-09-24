@@ -1,5 +1,3 @@
-import Navigacija from "./Navigacija";
-import Footer from "./Footer";
 import { useState, useEffect } from "react";
 import kalendar from "../assets/calendar.svg";
 import axios from "axios";
@@ -75,7 +73,7 @@ function Unos() {
                   <p className="text-3xl">Vrsta:</p>
                   <div className=" flex gap-8 text-2xl ">
                     {vrste.map((vrsta, index) => (
-                      <div className="flex items-center">
+                      <div key={index} className="flex items-center">
                         <input
                           type="radio"
                           name="vrsta"

@@ -4,11 +4,6 @@ import axios from "axios";
 function NudiSe({ user, osvjezi, postaviOsvjezi }) {
   const items = ["Tip", "Vrijednost", "Opis"];
   const [nudi, postaviPonudu] = useState([]);
-  const [novaPonuda, postaviNovuPonudu] = useState({
-    tip: "",
-    vrijednost: "",
-    opis: "",
-  });
 
   useEffect(() => {
     axios
@@ -17,11 +12,6 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
       .catch((err) => console.log(err.message));
     postaviOsvjezi(false);
   }, [osvjezi]);
-
-  const promjenaUlaza = (event) => {
-    const { name, value } = event.target;
-    postaviNovuPonudu({ ...novaPonuda, [name]: value });
-  };
 
   const obrisiPodatak = async (id) => {
     try {

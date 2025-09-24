@@ -75,16 +75,10 @@
   ],
   "trazi": [
     {
-      "id": "e1e2",
-      "tip": "Hrana",
-      "vrijednost": "20€",
-      "opis": "Trazimo hranu min 20€"
-    },
-    {
-      "id": "d1e7",
+      "id": "fe3d",
       "tip": "Lijekovi",
-      "vrijednost": "100€",
-      "opis": "Potreban brufen, normabel, panadol, lekadol, injekcija itd.."
+      "vrijednost": "50€",
+      "opis": "Trazimo lijek protiv bolesti psa"
     }
   ],
   "nudi": [
@@ -107,6 +101,24 @@
       "tip": "Igracke",
       "vrijednost": "20€",
       "opis": "ovo je donacija koju trazimo za igracke"
+    },
+    {
+      "id": "e1e2",
+      "tip": "Hrana",
+      "vrijednost": "20€",
+      "opis": "Trazimo hranu min 20€"
+    },
+    {
+      "id": "d1e7",
+      "tip": "Lijekovi",
+      "vrijednost": "100€",
+      "opis": "Potreban brufen, normabel, panadol, lekadol, injekcija itd.."
+    },
+    {
+      "id": "a736",
+      "tip": "Hrana",
+      "vrijednost": "10€",
+      "opis": "Nudimo donaciju hrane"
     }
   ],
   "obavijesti": [

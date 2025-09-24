@@ -1,10 +1,9 @@
-import Navigacija from "./Navigacija";
 import Filter from "./popisComponents/Filter";
 import Zivotinja from "./popisComponents/Zivotinja";
 
 import { useState } from "react";
 
-function Popis(props) {
+function Popis() {
   const [filterStatus, postaviFilterStatus] = useState("");
   const [filterVrsta, postaviFilterVrsta] = useState("");
 

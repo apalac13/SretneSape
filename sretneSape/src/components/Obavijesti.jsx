@@ -5,7 +5,7 @@ import bin from "../assets/bin.png";
 
 function Obavijesti() {
   const user = useContext(userContext);
-  const [prikazi, poszaviPrikazi] = useState(false);
+  const [prikazi, postaviPrikazi] = useState(false);
   const [obavijest, postaviObavijest] = useState([]);
   const [novaObavijest, postaviNovuObavijest] = useState({
     naslov: "",
@@ -83,7 +83,7 @@ function Obavijesti() {
     <div className="flex flex-col mt-36 mb-56 mx-16 font-pt-sans-narrow ">
       <div className="flex flex-col lg:flex-row justify-between mb-16">
         <button
-          onClick={() => poszaviPrikazi(!prikazi)}
+          onClick={() => postaviPrikazi(!prikazi)}
           className="flex items-center justify-center  w-[200px] h-[55px] border border-red-52 bg-red-52 text-gray-61 font-pt-sans-narrow text-xl "
         >
           NOVA OBAVIJEST

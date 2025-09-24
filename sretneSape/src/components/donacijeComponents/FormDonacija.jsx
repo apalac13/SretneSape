@@ -1,9 +1,7 @@
-import { useState } from "react";
 import axios from "axios";
 
 function FormDonacija({
   user,
-  osvjezi,
   postaviOsvjezi,
   novaDonacija,
   postaviNovuDonaciju,
@@ -20,15 +18,13 @@ function FormDonacija({
       if (user) {
         await axios
           .post(`http://localhost:3001/trazi`, novaDonacija)
-          .then((rez) => {
-            postaviTrazi(...rez, rez.data);
+          .then(() => {
             postaviOsvjezi(true);
           });
       } else {
         await axios
           .post(`http://localhost:3001/nudi`, novaDonacija)
-          .then((rez) => {
-            postaviTrazi(...rez, rez.data);
+          .then(() => {
             postaviOsvjezi(true);
           });
       }
