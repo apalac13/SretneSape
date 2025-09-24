@@ -51,7 +51,6 @@ function Navigacija({ action }) {
         </div>
       </div>
 
-      {/* Mobile Hamburger / Close button */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
         className="z-20 md:hidden flex flex-col justify-center items-center"
@@ -71,10 +70,9 @@ function Navigacija({ action }) {
         )}
       </button>
 
-      {/* Mobile menu */}
       <ul
         className={`z-10 w-screen bg-gray-61 pb-10 absolute top-0 right-0 flex flex-col space-y-3 p-6 transform transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
+          menuOpen ? "translate-y-0" : "translate-y-full"
         }`}
       >
         {navLinks.map((link) => (
