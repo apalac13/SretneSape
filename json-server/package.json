@@ -1,0 +1,14 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "json-server --watch podaci.json --port 3001",
+    "start:prod": "json-server --watch podaci.json --port $PORT"
+  },
+  "dependencies": {
+    "json-server": "^0.17.3"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0"
+  }
+}
