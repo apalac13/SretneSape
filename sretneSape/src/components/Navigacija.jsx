@@ -76,7 +76,7 @@ function Navigacija({ action }) {
       {/* Mobile Hamburger */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="space-y-1 md:hidden flex flex-col justify-center"
+        className="z-20 space-y-1 md:hidden flex flex-col justify-center"
         aria-label="Menu"
       >
         <div className="w-6 h-1 bg-black-45"></div>
