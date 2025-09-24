@@ -1,10 +1,9 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/slike/paws2.png";
-import { UserContext } from "../context/UserContext";
 
 function Navigacija({ action }) {
-  const user = useContext(UserContext);
+  const user = useContext(useContext);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
