@@ -6,8 +6,16 @@ function Navigacija({ action }) {
   const user = useContext(useContext);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navLinks = [
+    { to: "/", label: "O NAMA" },
+    { to: "/popis", label: "POPIS" },
+    { to: "/donacije", label: "DONACIJE" },
+    { to: "/obavijesti", label: "OBAVIJESTI" },
+    { to: "/unos", label: "UNOS" },
+  ];
+
   return (
-    <nav className="w-full flex justify-between px-10 py-10 border-b-2 border-black-45 font-pt-sans-narrow text-2xl text-black-45 relative">
+    <nav className="w-full flex justify-between px-6 md:px-10 py-6 border-b-2 border-black-45 font-pt-sans-narrow text-2xl text-black-45 relative">
       {/* Logo */}
       <NavLink to="/" className="w-8 h-8 md:hidden">
         <img src={logo} alt="logo" />
@@ -16,46 +24,16 @@ function Navigacija({ action }) {
       {/* Desktop menu */}
       <div className="hidden md:flex w-full justify-between items-center">
         <ul className="flex gap-[30px]">
-          <li>
-            <NavLink
-              to="/"
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              O NAMA
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/popis"
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              POPIS
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/donacije"
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              DONACIJE
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/obavijesti"
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              OBAVIJESTI
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/unos"
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              UNOS
-            </NavLink>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <NavLink
+                to={link.to}
+                className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
         <div className="flex items-center gap-[14px]">
@@ -73,80 +51,57 @@ function Navigacija({ action }) {
         </div>
       </div>
 
-      {/* Mobile Hamburger */}
+      {/* Mobile Hamburger / Close button */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="z-20 space-y-1 md:hidden flex flex-col justify-center"
+        className="z-20 md:hidden flex flex-col justify-center items-center"
         aria-label="Menu"
       >
-        <div className="w-6 h-1 bg-black-45"></div>
-        <div className="w-6 h-1 bg-black-45"></div>
-        <div className="w-6 h-1 bg-black-45"></div>
+        {menuOpen ? (
+          <div className="w-6 h-6 flex flex-col justify-center items-center relative">
+            <span className="absolute w-6 h-1 bg-black-45 rotate-45"></span>
+            <span className="absolute w-6 h-1 bg-black-45 -rotate-45"></span>
+          </div>
+        ) : (
+          <>
+            <div className="w-6 h-1 bg-black-45 mb-1"></div>
+            <div className="w-6 h-1 bg-black-45 mb-1"></div>
+            <div className="w-6 h-1 bg-black-45"></div>
+          </>
+        )}
       </button>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <ul className="z-20 w-screen bg-gray-61 pb-10 absolute top-0 right-0 flex flex-col space-y-3 p-6">
-          <li>
+      <ul
+        className={`z-10 w-screen bg-gray-61 pb-10 absolute top-0 right-0 flex flex-col space-y-3 p-6 transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {navLinks.map((link) => (
+          <li key={link.to}>
             <NavLink
-              to="/"
+              to={link.to}
               onClick={() => setMenuOpen(false)}
               className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
             >
-              O NAMA
+              {link.label}
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/popis"
-              onClick={() => setMenuOpen(false)}
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              POPIS
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/donacije"
-              onClick={() => setMenuOpen(false)}
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              DONACIJE
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/obavijesti"
-              onClick={() => setMenuOpen(false)}
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              OBAVIJESTI
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/unos"
-              onClick={() => setMenuOpen(false)}
-              className="text-black-45 hover:border-b-2 border-black-45/60 hover:text-black-45/60"
-            >
-              UNOS
-            </NavLink>
-          </li>
-          <li className="flex gap-2 items-center justify-center">
-            <label htmlFor="admin" className="cursor-pointer">
-              ADMIN
-            </label>
-            <input
-              id="admin"
-              type="checkbox"
-              value={user}
-              checked={user}
-              onChange={action}
-              className="w-8 h-8 border border-solid border-black-45 rounded-full checked:bg-black-45 cursor-pointer"
-            />
-          </li>
-        </ul>
-      )}
+        ))}
+        <li className="flex gap-2 items-center justify-center mt-4">
+          <label htmlFor="admin" className="cursor-pointer">
+            ADMIN
+          </label>
+          <input
+            id="admin"
+            type="checkbox"
+            value={user}
+            checked={user}
+            onChange={action}
+            className="w-8 h-8 border border-solid border-black-45 rounded-full checked:bg-black-45 cursor-pointer"
+          />
+        </li>
+      </ul>
     </nav>
   );
 }
