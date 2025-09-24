@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <userContext.Provider value={korisnik}>
-        <Navigacija action={handleUserChange} />
+        <Navigacija action={handleUserChange} user={korisnik} />
         <Routes>
           <Route path="/" element={<OpciPodaci />} />
           <Route path="/popis" element={<Popis />} />
