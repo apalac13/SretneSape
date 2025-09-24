@@ -6,7 +6,7 @@
       "vrsta": "pas",
       "status": "nije udomljen",
       "godina": "5 godina",
-      "slika": "/images/max.jpg",
+      "slika": "max.jpg",
       "opis": "Max je divan zlatni retriver, star 5 godina, koji trenutno traži svoj zauvek dom. Sa svojom prelepom svetložutom dlakom i toplim smeškom, Max osvaja srca svih koji ga sretnu. Ima energičan duh i voli igru, ali istovremeno je blag i ljubazan. Njegova odanost prema ljudima je neuporediva, a njegova potreba za ljubavlju čini ga idealnim saputnikom. Ako tražite vernog prijatelja koji će vas pratiti kroz život, Max je savršen izbor i spreman je da unese radost i ljubav u vaš dom."
     },
     {
@@ -15,7 +15,7 @@
       "vrsta": "macka",
       "status": "udomljen",
       "godina": "6 mjeseci",
-      "slika": "/images/chloe.jpg",
+      "slika": "chloe.jpg",
       "opis": "Chloe je šarmantna mačka od 6 meseci, koja osvaja srca svojom razigranom prirodom i neodoljivim izgledom. Njena mekana, svilenkasta dlaka ima prelepe tigraste šare koje ističu njenu eleganciju. Chloe je znatiželjna i radoznala, uvek spremna istražiti svoje okruženje i igrati se sa svime što joj dođe pod šapu. Njene širom otvorene oči reflektuju znatiželju i inteligenciju, a njen umiljat izraz lica čini je neodoljivom. Chloe je vesela i ljubazna mačka koja će uneti radost i toplinu u svaki dom koji joj pruži ljubav i pažnju."
     },
     {
@@ -24,7 +24,7 @@
       "vrsta": "macka",
       "status": "nije udomljen",
       "godina": "2 godine",
-      "slika": "/images/simba.jpg",
+      "slika": "simba.jpg",
       "opis": "Simba je prelepa mačka od 2 godine sa posebnim šarmom. Njene plave oči ističu se iznad mekane smeđe i crne dlake koja joj prekriva tela. Za razliku od tigrastih šara, Simba ima jedinstvenu kombinaciju smeđih i crnih nijansi koje se prepliću na elegantan način. Njena lepota i gracioznost upotpunjuju njen nevini izraz lica. Iako trenutno nije udomljena, Simba bi bila savršen dodatak svakom domu koji ceni lepotu, nežnost i vernost jedne predivne mačke."
     },
     {
@@ -33,7 +33,7 @@
       "vrsta": "pas",
       "status": "udomljen",
       "godina": "7.5 godina",
-      "slika": "/images/rocky.jpg",
+      "slika": "rocky.jpg",
       "opis": "Rocky je staronjemački ovčarski pas, prelepog izgleda i sa zrelošću od 7.5 godina. Iako trenutno nije udomljen, njegova mudrost i iskustvo čine ga posebnim saputnikom. Njegov prepoznatljivi izgled staronjemačkog ovčara, sa gustim krznom i snažnom građom, odaje utisak snage i vernosti. Rockyjev pogled odražava duboku povezanost i spremnost da pruži ljubav i odanost svom budućem vlasniku. Ako tražite iskusnog i ljubaznog psa koji će deliti radosti i izazove života, Rocky je idealan kandidat za vaš dom."
     },
     {
@@ -42,7 +42,7 @@
       "vrsta": "pas",
       "status": "nije udomljen",
       "godina": "4.7 godina",
-      "slika": "/images/luna.jpg",
+      "slika": "luna.jpg",
       "opis": "Luna je šarmantna Engleski koker španijel u dobi od 4.7 godina, koja trenutno čeka svoj zauvek dom. Njeno meko krzno i blistave oči odražavaju njenu ljubaznu i živopisnu prirodu. Iako nema poseban opis, njen temperament i karakter tipični su za ovu pasminu - inteligentna, ljubazna i predana. Luna je spremna pružiti nežnost i radost svom budućem vlasniku, čekajući da bude voljena i pažena. Ako tražite veselog i privrženog ljubimca, Luna bi mogla biti savršen dodatak vašem domu."
     },
     {
@@ -51,7 +51,7 @@
       "vrsta": "macka",
       "status": "udomljen",
       "godina": "3 mjeseca",
-      "slika": "/images/zara.jpg",
+      "slika": "zara.jpg",
       "opis": "Zara je preslatka mačka bijele boje, udomljena u dobi od 3 meseca. Iako nema dodatnog opisa, njen mladalački uzrast sugerira da je puna energije i znatiželje. Bela dlaka čini je posebno elegantnom, dok njen mladi uzrast obećava igru i razigranost. Zara je sada pronašla svoj dom, gde će sigurno doneti radost i ljubav svojim novim vlasnicima."
     },
     {
@@ -60,7 +60,7 @@
       "vrsta": "pas",
       "status": "nije udomljen",
       "godina": "4 godine",
-      "slika": "/images/daisy.jpg",
+      "slika": "daisy.jpg",
       "opis": "Daisy je vesela i razigrana dama koja se brzo sprijateljuje s drugim životinjama. Obožava sunčane dane i trčanje po travnjaku. Starost: 4 godine."
     }
   ],
