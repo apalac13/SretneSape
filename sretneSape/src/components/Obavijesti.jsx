@@ -16,7 +16,7 @@ function Obavijesti() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/obavijesti")
+      .get("/podaci.json")
       .then((rez) => postaviObavijest(rez.data))
       .catch((error) => console.log("Error:", error.message));
   }, []);
