@@ -15,11 +15,11 @@ function Navigacija({ action }) {
   ];
 
   return (
-    <nav className="w-full bg-white border-b border-gray-300 fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:py-5">
+    <nav className="w-full bg-gray-60 border-b border-black-45 fixed top-0 left-0 z-50 font-pt-sans-narrow  ">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 md:py-5">
         {/* Logo */}
         <NavLink to="/">
-          <img src={logo} alt="logo" className="h-10 w-auto" />
+          <img src={logo} alt="logo" className="h-12 w-auto" />
         </NavLink>
 
         {/* Desktop Links */}
@@ -29,8 +29,8 @@ function Navigacija({ action }) {
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `text-gray-800 hover:text-gray-600 ${
-                    isActive ? "font-bold border-b-2 border-gray-600" : ""
+                  `text-black-45 hover:text-black-45/70 text-2xl ${
+                    isActive ? "font-bold border-b-2 border-black-45" : ""
                   }`
                 }
               >
@@ -39,7 +39,7 @@ function Navigacija({ action }) {
             </li>
           ))}
           <li className="flex items-center gap-2">
-            <label htmlFor="admin" className="cursor-pointer">
+            <label htmlFor="admin" className="cursor-pointer text-2xl">
               ADMIN
             </label>
             <input
@@ -47,7 +47,7 @@ function Navigacija({ action }) {
               type="checkbox"
               checked={user}
               onChange={action}
-              className="w-6 h-6 rounded-full border border-gray-500 cursor-pointer checked:bg-gray-800"
+              className="w-7 h-7 rounded-full border border-black-45 cursor-pointer checked:bg-black-45"
             />
           </li>
         </ul>
@@ -78,19 +78,19 @@ function Navigacija({ action }) {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-300 w-full px-4 py-6 flex flex-col gap-4 items-center">
+        <div className="md:hidden bg-gray-60 border-t border-black-45 w-full px-4 py-6 flex flex-col gap-4 items-center">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               onClick={() => setMenuOpen(false)}
-              className="text-gray-800 hover:text-gray-600 text-lg font-medium"
+              className="text-black-45 hover:text-black-45/70 text-lg "
             >
               {link.label}
             </NavLink>
           ))}
           <div className="flex items-center gap-2 mt-4">
-            <label htmlFor="admin" className="cursor-pointer">
+            <label htmlFor="admin" className="cursor-pointer text-lg">
               ADMIN
             </label>
             <input
@@ -98,7 +98,7 @@ function Navigacija({ action }) {
               type="checkbox"
               checked={user}
               onChange={action}
-              className="w-6 h-6 rounded-full border border-gray-500 cursor-pointer checked:bg-gray-800"
+              className="w-6 h-6 rounded-full border border-black-45 cursor-pointer checked:bg-black-45"
             />
           </div>
         </div>
