@@ -72,7 +72,7 @@ function Navigacija({ action }) {
 
       <ul
         className={`z-10 w-screen bg-gray-61 pb-10 absolute top-0 right-0 flex flex-col space-y-3 p-6 transform transition-transform duration-300 ${
-          menuOpen ? "translate-y-0" : "translate-y-full"
+          menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {navLinks.map((link) => (
