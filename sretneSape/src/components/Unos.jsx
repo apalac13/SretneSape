@@ -10,7 +10,7 @@ function Unos() {
     godina: "",
     slika: "",
     opis: "",
-    chipiran: false, // dodano u state
+    chipiran: false,
   });
 
   const vrste = [
