@@ -10,6 +10,7 @@ function Unos() {
     godina: "",
     slika: "",
     opis: "",
+    chipiran: false, // dodano u state
   });
 
   const vrste = [
@@ -33,30 +34,36 @@ function Unos() {
     postaviNovuZivotinju({ ...novaZivotinja, [name]: value });
   }
 
+  function promjenaChecka(event) {
+    const { checked } = event.target;
+    postaviNovuZivotinju({ ...novaZivotinja, chipiran: checked });
+  }
+
   const saljiPodatke = (event) => {
     event.preventDefault();
     console.log(novaZivotinja);
-
     axios
       .post("https://sretnesape.onrender.com/zivotinje", novaZivotinja)
-      .then((rez) => console.log(rez));
+      .then((rez) => console.log(rez))
+      .catch((err) => console.error(err));
   };
 
   return (
     <div>
       <div className="mt-36 mb-56 ">
-        <h1 className="text-black-46 text-5xl font-pt-sans-narrow mb-20  ">
+        <h1 className="text-black-46 text-5xl max-[800px]:text-2xl font-pt-sans-narrow mb-20">
           Unos nove životinje
         </h1>
-        <div className="flex  justify-center items-center">
+        <div className="flex justify-center items-center">
           <form
             onSubmit={saljiPodatke}
-            className="flex flex-col  items-center "
+            className="flex flex-col items-center max-[400px]:w-full"
           >
-            <div className="flex flex-col  lg:w-[800px] w-full lg:flex-row lg:items-start  items-center justify-between font-pt-sans-narrow mb-10">
-              <div className="flex flex-col   gap-8">
-                <div htmlFor="" className="flex flex-col gap-1 items-start">
-                  <label htmlFor="ime" className=" text-3xl">
+            <div className="flex flex-col max-[800px]:px-4 lg:w-[800px] w-full lg:flex-row lg:items-start items-center justify-between font-pt-sans-narrow mb-10">
+              <div className="flex flex-col w-full gap-8">
+                {/* Ime */}
+                <div className="flex flex-col gap-1 items-start w-full">
+                  <label htmlFor="ime" className="text-3xl">
                     Ime:
                   </label>
                   <input
@@ -65,13 +72,16 @@ function Unos() {
                     name="ime"
                     value={novaZivotinja.ime}
                     onChange={promjenaUlaza}
-                    className="lg:w-[400px] w-full  h-[40px] text-xl p-1  bg-gray-50 border border-black-45 rounded"
+                    cols="3"
+                    className="lg:w-[400px] w-full  text-xl p-1 bg-gray-50 border border-black-45 rounded"
                     required
                   />
                 </div>
-                <div className="flex flex-col gap-1 items-start ">
+
+                {/* Vrsta */}
+                <div className="flex flex-col gap-1 items-start">
                   <p className="text-3xl">Vrsta:</p>
-                  <div className=" flex gap-8 text-2xl ">
+                  <div className="flex gap-8 text-2xl">
                     {vrste.map((vrsta, index) => (
                       <div key={index} className="flex items-center">
                         <input
@@ -80,13 +90,15 @@ function Unos() {
                           value={vrsta.value}
                           onChange={promjenaUlaza}
                           checked={novaZivotinja.vrsta === vrsta.value}
-                          className=" w-6 h-6 bg-gray-white-70 border border-solid border-black-45 rounded-full checked:bg-black-45 mr-2 cursor-pointer "
+                          className="w-6 h-6 border border-solid border-black-45 rounded-full mr-2 cursor-pointer"
                         />
-                        <label key={index}>{vrsta.label}</label>
+                        <label>{vrsta.label}</label>
                       </div>
                     ))}
                   </div>
                 </div>
+
+                {/* Godine */}
                 <div className="flex flex-col items-start">
                   <label htmlFor="godine" className="text-3xl">
                     Godine:
@@ -101,7 +113,9 @@ function Unos() {
                     required
                   />
                 </div>
-                <div className="flex flex-col items-start ">
+
+                {/* Opis */}
+                <div className="flex flex-col items-start">
                   <label htmlFor="opis" className="text-3xl">
                     Opis:
                   </label>
@@ -110,13 +124,14 @@ function Unos() {
                     id="opis"
                     value={novaZivotinja.opis}
                     onChange={promjenaUlaza}
-                    cols="45"
-                    rows="9"
-                    className="text-xl p-1 bg-gray-50 border border-black-45 rounded"
+                    className="text-xl w-full h-10 p-1 bg-gray-50 border border-black-45 rounded"
                   ></textarea>
                 </div>
               </div>
-              <div className="self-start flex flex-col  gap-14 text-3xl">
+
+              {/* Desna strana */}
+              <div className="self-start flex flex-col gap-14 text-3xl">
+                {/* Slika */}
                 <div className="flex flex-col items-start gap-1">
                   <label htmlFor="slika">Slika:</label>
                   <input
@@ -125,29 +140,37 @@ function Unos() {
                     name="slika"
                     value={novaZivotinja.slika}
                     onChange={promjenaUlaza}
-                    className="w-[200px] h-[40px] text-xl p-1 bg-gray-50 border border-black-45 rounded  "
+                    className="w-[200px] h-[40px] text-xl p-1 bg-gray-50 border border-black-45 rounded"
                   />
                 </div>
-                <div className="flex items-center gap-1">
+
+                {/* Čipiran */}
+                <div className="flex items-center gap-2">
                   <input
                     type="checkbox"
-                    className="w-8 h-8 border border-solid border-black-45  checked:bg-black-45 mr-2 cursor-pointer hover:black-45/60"
+                    checked={novaZivotinja.chipiran}
+                    onChange={promjenaChecka}
+                    className="w-8 h-8 border border-solid border-black-45 mr-2 cursor-pointer checked:bg-black-45"
                   />
-                  <label htmlFor="">Čipiran</label>
+                  <label htmlFor="chipiran">Čipiran</label>
                 </div>
+
+                {/* Pregled */}
                 <div className="flex flex-col items-start gap-1">
-                  <div className="flex  gap-2 ">
+                  <div className="flex gap-2">
                     <img src={kalendar} alt="kalendar" width={30} height={30} />
                     <p>Pregled:</p>
                   </div>
                   <input
                     type="text"
                     value={trenutniDatum}
+                    readOnly
                     className="w-[200px] h-[40px] text-base bg-gray-50 border border-black-45 rounded"
                   />
                 </div>
               </div>
             </div>
+
             <button
               type="submit"
               className="w-full h-[50px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl"

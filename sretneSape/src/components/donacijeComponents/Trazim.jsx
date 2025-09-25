@@ -50,15 +50,15 @@ function Trazim({ user, osvjezi, postaviOsvjezi }) {
         </tr>
       </thead>
 
-      <tbody className="flex flex-col gap-1 py-4 text-xl">
+      <tbody className="flex flex-col gap-2 py-4 text-xl">
         {trazi.map((t) => (
           <tr
             key={t.id}
-            className="flex flex-col sm:flex-row items-start justify-between"
+            className="flex flex-col md:flex-row items-start pb-2 border-b border-red-51 justify-between"
           >
-            <td>{t.tip}</td>
-            <td>{t.vrijednost}</td>
-            <td className="border border-red-51 p-2 bg-gray-61">{t.opis}</td>
+            <td className="text-start">{t.tip}</td>
+            <td className="text-center">{t.vrijednost}</td>
+            <td className="text-start">{t.opis}</td>
             <td>
               {user === true ? (
                 <div className="flex gap-2">

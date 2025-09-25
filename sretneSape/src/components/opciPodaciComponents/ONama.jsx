@@ -3,8 +3,7 @@ import paws2 from "../../assets/slike/paws2.png";
 import destination from "../../assets/slike/destination.png";
 import contactUs from "../../assets/slike/contact-us.png";
 import conversation from "../../assets/slike/conversation.png";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import Form from "./Form";
 
 function ONama() {
   const location = {
@@ -13,34 +12,8 @@ function ONama() {
     lng: 17.4186861,
   };
 
-  const [mail, postaviMail] = useState([]);
-  const [formaPodaci, postaviPodatke] = useState({
-    ime: "",
-    prezime: "",
-    email: "",
-    poruka: "",
-  });
-
-  useEffect(() => {
-    axios
-      .get("https://sretnesape.onrender.com/mail")
-      .then((rez) => postaviMail(rez.data))
-      .catch((error) => console.log(error.message));
-  }, []);
-
-  function promjenaUlaza(event) {
-    const { name, value } = event.target;
-    postaviPodatke({ ...formaPodaci, [name]: value });
-  }
-
-  function saljiPodatke() {
-    axios
-      .post("https://sretnesape.onrender.com/mail", formaPodaci)
-      .then((rez) => postaviMail((stanje) => [...stanje, rez.data]));
-  }
-
   return (
-    <div className=" pt-[70px] pb-56 px-24 font-pt-sans-narrow">
+    <div className=" pt-[70px] pb-56 px-24 max-md:px-2 font-pt-sans-narrow">
       <h1 className="text-black-46  text-6xl max-[1022px]:text-4xl ">O NAMA</h1>
       {/* sape */}
       <div className="flex lg:flex-row  max-[768px]:flex-col  items-center gap-14  mt-20  ">
@@ -65,7 +38,7 @@ function ONama() {
         </p>
       </div>
       {/* lokacija */}
-      <div className="flex  lg:flex-row max-[768px]:flex-col max-[1022px]:items-center gap-14 items-end justify-between  mt-32 ">
+      <div className="flex  lg:flex-row  max-[768px]:flex-col-reverse max-[1022px]:items-center gap-14 items-end justify-between  mt-32 ">
         <div className="flex grow flex-col gap-20 w-full">
           <p className=" text-black-46 text-6xl max-[1022px]:text-4xl ">
             lokacija
@@ -102,78 +75,12 @@ function ONama() {
         </div>
       </div>
       {/* pitanje */}
-      <div className="flex lg:flex-row max-[768px]:flex-col justify-between items-center max-[1022px]:items-center  gap-[104px] mt-32 ">
-        <div className="flex flex-col  gap-[104px]">
+      <div className="flex lg:flex-row max-[768px]:flex-col-reverse justify-between items-center max-[1022px]:items-center  gap-[104px] mt-32 ">
+        <div className="flex flex-col  ap-[104px]">
           <p className="text-black-46 text-6xl max-[1022px]:text-4xl">
             imaš pitanje?
           </p>
-          <form
-            className="flex flex-col items-start justify-center max-w-[600px]  gap-7"
-            onSubmit={saljiPodatke}
-          >
-            <label
-              htmlFor=""
-              className="flex max-[1022px]:flex-col max-[1022px]:items-start  items-end justify-between w-full   text-4xl "
-            >
-              <p className=" max-[1022px]:text-3xl ">Ime:</p>
-              <input
-                type="text"
-                name="ime"
-                value={formaPodaci.ime}
-                onChange={promjenaUlaza}
-                className=" max-w-[500px] h-12  bg-gray-50 border border-black-45"
-                required
-              />
-            </label>
-            <label
-              htmlFor=""
-              className="flex max-[1022px]:flex-col max-[1022px]:items-start items-end justify-between w-full   text-4xl"
-            >
-              <p className=" max-[1022px]:text-3xl ">Prezime:</p>
-              <input
-                type="text"
-                name="prezime"
-                value={formaPodaci.prezime}
-                onChange={promjenaUlaza}
-                className="max-w-[500px] h-12  bg-gray-50 border border-black-45"
-                required
-              />
-            </label>
-            <label
-              htmlFor=""
-              className="flex max-[1022px]:flex-col max-[1022px]:items-start items-end justify-between w-full  text-4xl"
-            >
-              <p className=" max-[1022px]:text-3xl ">Email:</p>
-              <input
-                type="email"
-                name="email"
-                value={formaPodaci.email}
-                onChange={promjenaUlaza}
-                className="max-w-[500px] h-12  bg-gray-50 border border-black-45"
-                required
-              />
-            </label>
-            <label
-              htmlFor=""
-              className="flex max-[1022px]:flex-col max-[1022px]:items-start items-start justify-between w-full  text-4xl"
-            >
-              <p className=" max-[1022px]:text-3xl ">Poruka:</p>
-              <textarea
-                name="poruka"
-                value={formaPodaci.poruka}
-                onChange={promjenaUlaza}
-                rows={4}
-                className="w-full bg-gray-50 border border-black-45"
-                required
-              />
-            </label>
-            <button
-              type="submit"
-              className="w-full h-[60px] text-2xl text-gray-61 bg-red-51 border border-red-51 self-end hover:bg-black-45"
-            >
-              POŠALJI
-            </button>
-          </form>
+          <Form />
         </div>
         <img
           src={conversation}

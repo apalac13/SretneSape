@@ -52,7 +52,7 @@ function KarticaZivotinje() {
   }
 
   return (
-    <div className="w-full flex flex-col md:flex-row items-center justify-center gap-20 px-10 my-10">
+    <div className="w-full flex flex-col md:flex-row items-center justify-center gap-20 px-10 max-sm:p-2 my-10">
       <img
         src={`../../../zivotinje/${zivotinja.slika}`}
         alt=""
@@ -68,7 +68,7 @@ function KarticaZivotinje() {
           <PrikazPodataka zivotinja={zivotinja} />
         )}
 
-        <div className="flex justify-between">
+        <div className="flex justify-between max-[320px]:flex-col max-[320px]:gap-2 ">
           <button
             onClick={promijeniStatus}
             className="w-[150px] h-[50px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl "

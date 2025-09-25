@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import ONama from "./opciPodaciComponents/ONama";
 
 function OpciPodaci() {
-
   return (
     <div>
       <div className="relative bg-image bg-cover bg-no-repeat bg-center bg-blend-darken brightness-50 w-lvh h-lvh  "></div>
-      <div className="absolute  top-2/4 left-2/4  lg:translate-x-1/4 max-[1022px]:-translate-x-1/2 translate-y-2/4  bg-transparent max-w-[400px] ">
+      <div className="absolute  top-[50%] left-[50%]  translate-x-[-60%]  translate-y-[-10%]  bg-transparent max-w-[400px] ">
         <p className=" bg-transparent font-pt-serif max-[1022px]:text-2xl  text-4xl text-gray-61  ">
           Izaberi svog ljubimca i kreni u igru
         </p>
