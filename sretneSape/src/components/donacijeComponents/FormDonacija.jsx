@@ -41,7 +41,7 @@ function FormDonacija({
           name="tip"
           value={novaDonacija.tip}
           onChange={promjenaUlaza}
-          className="border border-red-51 rounded w-[200px] h-[30px] hover:border-red-51/90"
+          className="border border-red-51 w-[200px] h-[30px] hover:border-red-51/90"
         >
           <option value="">Tip</option>
           {tip.map((t, index) => (
@@ -58,7 +58,7 @@ function FormDonacija({
           name="vrijednost"
           value={novaDonacija.vrijednost}
           onChange={promjenaUlaza}
-          className="border border-red-51 rounded w-[200px] h-[30px] hover:border-red-51/90"
+          className="border border-red-51  w-[200px] h-[30px] hover:border-red-51/90 p-1"
         />
       </label>
       <label className="flex flex-col items-start">
@@ -69,7 +69,7 @@ function FormDonacija({
           rows="5"
           value={novaDonacija.opis}
           onChange={promjenaUlaza}
-          className="border border-red-51 rounded hover:border-red-51/90"
+          className="border border-red-51  hover:border-red-51/90 p-1"
         ></textarea>
       </label>
 

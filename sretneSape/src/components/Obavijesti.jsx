@@ -80,7 +80,7 @@ function Obavijesti() {
   };
 
   return (
-    <div className="flex flex-col mt-36 mb-56 mx-16 font-pt-sans-narrow ">
+    <div className="flex flex-col mt-36 mb-56 mx-16 max-sm:mx-4 font-pt-sans-narrow ">
       <div className="flex flex-col lg:flex-row justify-between mb-16">
         <button
           onClick={() => postaviPrikazi(!prikazi)}

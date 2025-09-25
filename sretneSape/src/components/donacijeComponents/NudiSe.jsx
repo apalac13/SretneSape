@@ -47,15 +47,15 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
           ))}
         </tr>
       </thead>
-      <tbody className="flex flex-col gap-1 py-4 text-xl">
+      <tbody className="flex flex-col gap-2 py-4 text-xl">
         {nudi.map((n) => (
           <tr
             key={n.id}
-            className="flex flex-col sm:flex-row items-start justify-between"
+            className="flex flex-col md:flex-row items-start pb-2 border-b border-red-51 justify-between"
           >
-            <td>{n.tip}</td>
-            <td>{n.vrijednost}</td>
-            <td className="border border-red-51 p-2 bg-gray-61">{n.opis}</td>
+            <td className="text-start">{n.tip}</td>
+            <td className="text-center">{n.vrijednost}</td>
+            <td className="text-start">{n.opis}</td>
             <td>
               {user === true && (
                 <button

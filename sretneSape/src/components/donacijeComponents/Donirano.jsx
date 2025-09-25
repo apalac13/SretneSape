@@ -47,16 +47,15 @@ function Donirano({ user, osvjezi, postaviOsvjezi }) {
           ))}
         </tr>
       </thead>
-
-      <tbody className="flex flex-col gap-1 py-4 text-xl">
+      <tbody className="flex flex-col gap-2 py-4 text-xl">
         {donirano.map((d) => (
           <tr
             key={d.id}
-            className="flex flex-col sm:flex-row items-start justify-between"
+            className="flex flex-col md:flex-row items-start pb-2 border-b border-red-51 justify-between"
           >
-            <td>{d.tip}</td>
-            <td>{d.vrijednost}</td>
-            <td className="border border-red-51 p-2 bg-gray-61">{d.opis}</td>
+            <td className="text-start">{d.tip}</td>
+            <td className="text-center">{d.vrijednost}</td>
+            <td className="text-start">{d.opis}</td>
             <td>
               {user === true && (
                 <div className="flex gap-2">

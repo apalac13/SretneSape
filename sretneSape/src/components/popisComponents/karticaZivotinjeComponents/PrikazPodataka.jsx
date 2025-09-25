@@ -7,7 +7,7 @@ function PrikazPodataka({ zivotinja }) {
   ];
 
   return (
-    <div className="flex flex-col gap-3 items-start w-[400px]">
+    <div className="flex flex-col gap-3 items-start w-[400px] max-sm:w-full">
       {dataItems.map((item, index) =>
         item.label !== "Opis" ? (
           <div key={index} className="flex gap-2 items-end">
