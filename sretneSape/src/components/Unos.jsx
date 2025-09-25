@@ -51,7 +51,7 @@ function Unos() {
   return (
     <div>
       <div className="mt-36 mb-56 ">
-        <h1 className="text-black-46 text-5xl max-[800px]:text-2xl font-pt-sans-narrow mb-20">
+        <h1 className="text-black-46 text-5xl max-[800px]:text-3xl font-pt-sans-narrow mb-20">
           Unos nove životinje
         </h1>
         <div className="flex justify-center items-center">
