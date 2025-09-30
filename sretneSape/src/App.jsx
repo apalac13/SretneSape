@@ -12,7 +12,7 @@ import KarticaZivotinje from "./components/popisComponents/KarticaZivotinje";
 import "./App.css";
 import userContext from "./components/userContext";
 
-function App() {
+export default function App() {
   const [korisnik, postaviKorisnika] = useState(false);
   const handleUserChange = (e) => {
     postaviKorisnika(e.target.checked);
@@ -36,5 +36,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

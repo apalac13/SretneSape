@@ -5,7 +5,7 @@ import twitter from "../assets/twitter.svg";
 import youtube from "../assets/youtube.svg";
 import { NavLink } from "react-router-dom";
 
-function Footer() {
+export default function Footer() {
   const socialsItems = [
     { name: "instagram", src: instagram },
     { name: "facebook", src: facebook },
@@ -68,5 +68,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;

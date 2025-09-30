@@ -3,7 +3,7 @@ import Zivotinja from "./popisComponents/Zivotinja";
 
 import { useState } from "react";
 
-function Popis() {
+export default function Popis() {
   const [filterStatus, postaviFilterStatus] = useState("");
   const [filterVrsta, postaviFilterVrsta] = useState("");
 
@@ -24,5 +24,3 @@ function Popis() {
     </div>
   );
 }
-
-export default Popis;

@@ -1,4 +1,4 @@
-function PrikazPodataka({ zivotinja }) {
+export default function PrikazPodataka({ zivotinja }) {
   const dataItems = [
     { label: "Ime", value: zivotinja.ime },
     { label: "Vrsta", value: zivotinja.vrsta },
@@ -24,5 +24,3 @@ function PrikazPodataka({ zivotinja }) {
     </div>
   );
 }
-
-export default PrikazPodataka;

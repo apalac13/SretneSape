@@ -5,7 +5,7 @@ import contactUs from "../../assets/slike/contact-us.png";
 import conversation from "../../assets/slike/conversation.png";
 import Form from "./Form";
 
-function ONama() {
+export default function ONama() {
   const location = {
     address: "Hrvatskih branitelja 2, Grude 88340, Bosna i Hercegovina",
     lat: 43.3615127,
@@ -91,5 +91,3 @@ function ONama() {
     </div>
   );
 }
-
-export default ONama;

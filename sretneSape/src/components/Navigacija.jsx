@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/slike/paws2.png";
 
-function Navigacija({ action, user }) {
+export default function Navigacija({ action, user }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
@@ -106,4 +106,3 @@ function Navigacija({ action, user }) {
   );
 }
 
-export default Navigacija;

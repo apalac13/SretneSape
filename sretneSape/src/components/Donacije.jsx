@@ -6,7 +6,7 @@ import userContext from "./userContext";
 import { useContext } from "react";
 import { useState } from "react";
 
-function Donacije() {
+export default function Donacije() {
   const user = useContext(userContext);
   const [osvjezi, postaviOsvjezi] = useState(true);
   const [donacija, postaviDonaciju] = useState(false);
@@ -65,5 +65,3 @@ function Donacije() {
     </div>
   );
 }
-
-export default Donacije;

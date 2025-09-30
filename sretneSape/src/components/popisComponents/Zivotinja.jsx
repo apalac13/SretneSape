@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Zivotinja({ filterStatus, filterVrsta }) {
+export default function Zivotinja({ filterStatus, filterVrsta }) {
   const [zivotinje, postaviZivotinje] = useState([]);
 
   useEffect(() => {
@@ -44,5 +44,3 @@ function Zivotinja({ filterStatus, filterVrsta }) {
     </div>
   );
 }
-
-export default Zivotinja;

@@ -1,7 +1,7 @@
 import LocationPin from "./LocationPin";
 import GoogleMapReact from "google-map-react";
 
-function Map({ location, zoomLevel }) {
+export default function Map({ location, zoomLevel }) {
   return (
     <div className="flex flex-col">
       <h2 className=" text-2xl max-[1022px]:text-xl text-black-46/90 ">
@@ -24,5 +24,3 @@ function Map({ location, zoomLevel }) {
     </div>
   );
 }
-
-export default Map;

@@ -4,7 +4,7 @@ import axios from "axios";
 import PrikazPodataka from "./karticaZivotinjeComponents/PrikazPodataka";
 import UrediPodatke from "./karticaZivotinjeComponents/UrediPodatke";
 
-function KarticaZivotinje() {
+export default function KarticaZivotinje() {
   const [zivotinja, postaviZivotinju] = useState([]);
   const { zivotinjaId } = useParams();
   const [uredi, postaviUredi] = useState(false);
@@ -86,5 +86,3 @@ function KarticaZivotinje() {
     </div>
   );
 }
-
-export default KarticaZivotinje;

@@ -1,4 +1,4 @@
-function UrediPodatke({ zivotinja, promjenaPodatka }) {
+export default function UrediPodatke({ zivotinja, promjenaPodatka }) {
   const inputFields = [
     { label: "Ime", name: "ime", value: zivotinja.ime },
     { label: "Vrsta", name: "vrsta", value: zivotinja.vrsta },
@@ -33,5 +33,3 @@ function UrediPodatke({ zivotinja, promjenaPodatka }) {
     </div>
   );
 }
-
-export default UrediPodatke;

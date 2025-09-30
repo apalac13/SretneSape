@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-
 import axios from "axios";
 
-function Trazim({ user, osvjezi, postaviOsvjezi }) {
+export default function Trazim({ user, osvjezi, postaviOsvjezi }) {
   const items = ["Tip", "Vrijednost", "Opis"];
   const [trazi, postaviTrazi] = useState([]);
 
@@ -90,5 +89,3 @@ function Trazim({ user, osvjezi, postaviOsvjezi }) {
     </table>
   );
 }
-
-export default Trazim;

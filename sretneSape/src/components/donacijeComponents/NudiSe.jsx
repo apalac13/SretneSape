@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function NudiSe({ user, osvjezi, postaviOsvjezi }) {
+export default function NudiSe({ user, osvjezi, postaviOsvjezi }) {
   const items = ["Tip", "Vrijednost", "Opis"];
   const [nudi, postaviPonudu] = useState([]);
 
@@ -72,5 +72,3 @@ function NudiSe({ user, osvjezi, postaviOsvjezi }) {
     </table>
   );
 }
-
-export default NudiSe;

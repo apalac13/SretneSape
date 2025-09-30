@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ONama from "./opciPodaciComponents/ONama";
 
-function OpciPodaci() {
+export default function OpciPodaci() {
   return (
     <div>
       <div className="relative bg-image bg-cover bg-no-repeat bg-center bg-blend-darken brightness-50 w-lvh h-lvh  "></div>
@@ -20,4 +20,3 @@ function OpciPodaci() {
   );
 }
 
-export default OpciPodaci;

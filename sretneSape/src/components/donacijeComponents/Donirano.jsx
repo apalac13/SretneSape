@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function Donirano({ user, osvjezi, postaviOsvjezi }) {
+export default function Donirano({ user, osvjezi, postaviOsvjezi }) {
   const items = ["Tip", "Vrijednost", "Opis"];
   const [donirano, postaviDonirano] = useState([]);
 
@@ -80,5 +80,3 @@ function Donirano({ user, osvjezi, postaviOsvjezi }) {
     </table>
   );
 }
-
-export default Donirano;

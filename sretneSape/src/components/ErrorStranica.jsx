@@ -1,7 +1,7 @@
 import { useRouteError } from "react-router-dom";
 import error404 from "../assets/slike/Error404.jpg";
 
-function ErrorStranica() {
+export default function ErrorStranica() {
   const error = useRouteError();
   console.error(error);
 
@@ -14,9 +14,7 @@ function ErrorStranica() {
           <i>{error.statusText || error.message}</i>
         </p>
       </div>
-      <img src={error404} alt="Error404" className="w-[1300px] h-[1000px]" />
+      <img src={error404} alt="Error404" className="w-screen h-full" />
     </div>
   );
 }
-
-export default ErrorStranica;

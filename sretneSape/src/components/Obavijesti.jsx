@@ -3,7 +3,7 @@ import axios from "axios";
 import userContext from "./userContext";
 import bin from "../assets/bin.png";
 
-function Obavijesti() {
+export default function Obavijesti() {
   const user = useContext(userContext);
   const [prikazi, postaviPrikazi] = useState(false);
   const [obavijest, postaviObavijest] = useState([]);
@@ -213,5 +213,3 @@ function Obavijesti() {
     </div>
   );
 }
-
-export default Obavijesti;

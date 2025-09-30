@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import kalendar from "../assets/calendar.svg";
 import axios from "axios";
 
-function Unos() {
+export default function Unos() {
   const [novaZivotinja, postaviNovuZivotinju] = useState({
     ime: "",
     vrsta: "",
@@ -184,4 +184,3 @@ function Unos() {
   );
 }
 
-export default Unos;

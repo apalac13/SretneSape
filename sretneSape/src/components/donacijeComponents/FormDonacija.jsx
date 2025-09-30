@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function FormDonacija({
+export default function FormDonacija({
   user,
   postaviOsvjezi,
   novaDonacija,
@@ -82,5 +82,3 @@ function FormDonacija({
     </form>
   );
 }
-
-export default FormDonacija;

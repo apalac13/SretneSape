@@ -1,4 +1,9 @@
-function Filter({ filterStatus, postaviStatus, filterVrsta, postaviVrstu }) {
+export default function Filter({
+  filterStatus,
+  postaviStatus,
+  filterVrsta,
+  postaviVrstu,
+}) {
   const statusOptions = [
     { label: "Svi", value: "" },
     { label: "Udomljen", value: "udomljen" },
@@ -58,5 +63,3 @@ function Filter({ filterStatus, postaviStatus, filterVrsta, postaviVrstu }) {
     </div>
   );
 }
-
-export default Filter;
