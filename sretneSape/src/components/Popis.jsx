@@ -11,7 +11,7 @@ export default function Popis() {
     <div>
       <div
         className="flex lg:flex-row flex-col
-      justify-between gap-8 mx-8 mt-8"
+      justify-between gap-8 mx-8 mt-36"
       >
         <Filter
           filterStatus={filterStatus}
