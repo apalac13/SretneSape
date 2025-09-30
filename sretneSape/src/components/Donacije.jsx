@@ -24,7 +24,7 @@ export default function Donacije() {
             onClick={() => postaviDonaciju(!donacija)}
             className="flex items-center justify-center  w-[200px] h-[55px] border border-red-51 bg-red-51 text-gray-61 font-pt-sans-narrow text-xl mb-16"
           >
-            NOVA DONACIJA
+           { donacija ? <p>ODUSTANI</p> : <p>NOVA DONACIJA</p>}
           </button>
           {donacija && (
             <FormDonacija

@@ -30,23 +30,19 @@ export default function Obavijesti() {
   async function posaljiObavijest() {
     const { naslov, text } = novaObavijest;
 
-    // Get the current date
     const currentDate = new Date();
     const formattedDate = `${currentDate.getFullYear()}-${
       currentDate.getMonth() + 1
     }-${currentDate.getDate()}`;
 
-    // Add the current date to novaObavijest
     const novaObavijestWithDate = {
       ...novaObavijest,
       datum: formattedDate,
     };
 
-    // Validation functions
     const isValidNaslov = naslov.length <= 20;
     const isValidTextLength = text.length >= 10 && text.length <= 200;
 
-    // Check for validation errors
     if (!isValidNaslov || !isValidTextLength) {
       let errorMessage = "";
       if (!isValidNaslov)
@@ -61,7 +57,7 @@ export default function Obavijesti() {
     try {
       const response = await axios.post(
         "https://sretnesape.onrender.com/obavijesti",
-        novaObavijestWithDate // Send novaObavijest with current date
+        novaObavijestWithDate
       );
       postaviObavijest(response.data);
     } catch (error) {
@@ -86,7 +82,7 @@ export default function Obavijesti() {
           onClick={() => postaviPrikazi(!prikazi)}
           className="flex items-center justify-center  w-[200px] h-[55px] border border-red-52 bg-red-52 text-gray-61 font-pt-sans-narrow text-xl "
         >
-          NOVA OBAVIJEST
+          {prikazi ? <p>ODUSTANI</p> : <p>NOVA OBAVIJEST</p>}
         </button>
         <form
           onSubmit={posaljiObavijest}
