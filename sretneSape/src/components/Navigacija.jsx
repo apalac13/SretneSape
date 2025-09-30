@@ -14,7 +14,7 @@ export default function Navigacija({ action, user }) {
   ];
 
   return (
-    <nav className="w-full bg-gray-60 border-b border-black-45 fixed top-0 left-0 z-50 font-pt-sans-narrow  ">
+    <nav className="w-full bg-gray-60 border-b border-black-45 max:mdfixed top-0 left-0 z-50 font-pt-sans-narrow  ">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 md:py-5">
         {/* Logo */}
         <NavLink to="/">
@@ -105,4 +105,3 @@ export default function Navigacija({ action, user }) {
     </nav>
   );
 }
-
